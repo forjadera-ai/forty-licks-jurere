@@ -39,6 +39,10 @@ header{display:flex;flex-direction:column;gap:12px}
 .stats div{flex:1 1 120px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
 .stats b{display:block;font-family:var(--display);font-size:1.5rem;line-height:1.1;font-variant-numeric:tabular-nums}
 .stats span{font-size:.82rem;color:var(--muted)}
+.fx{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:4px 16px;background:var(--sun-soft);border:1.5px solid var(--sun);border-radius:12px;padding:12px 16px}
+.fx-k{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.fx b{display:block;font-family:var(--display);font-size:1.7rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.fx-d{font-size:.82rem;color:var(--muted)}
 .house{background:var(--sea);color:#fff;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .house{background:#0e4f53}}
 :root[data-theme="dark"] .house{background:#0e4f53}
@@ -127,6 +131,10 @@ footer{font-size:.8rem;color:var(--muted)}
     <div><b>14</b><span>confirmados</span></div>
     <div><b>22 → 29</b><span>noviembre en la casa</span></div>
     <div><b>14 h / 10 h</b><span>entrada / salida</span></div>
+  </div>
+  <div class="fx" id="cambio">
+    <div><span class="fx-k">Cambio Pix · Mercado Pago</span><b>R$ 1 = $309,43</b></div>
+    <span class="fx-d">Actualizado el mié 4/11</span>
   </div>
 </header>
 
