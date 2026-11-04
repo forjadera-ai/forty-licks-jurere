@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Forty Licks en Jurerê</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: guía del viaje en una columna (dos en pantallas anchas); arriba lo que hay que saber ya (casa, fechas, quién está cuándo), abajo la guía de la zona con distancias desde la casa */
+:root{
+  --bg:#f3f7f6; --surface:#ffffff; --ink:#0f2a2e; --muted:#4f6a6d; --line:#d4e2e0;
+  --sea:#0b6e73; --sea-soft:#dcefee; --on-sea:#ffffff; --sun:#e8a317; --sun-soft:#fdf1d6; --closed:#b8463a;
+  --display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0b1a1c; --surface:#122628; --ink:#e6f1f0; --muted:#9db6b8; --line:#23403f;
+  --sea:#4fc2c4; --sea-soft:#163638; --on-sea:#062224; --sun:#f2b93b; --sun-soft:#2e2712; --closed:#e58275; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0b1a1c; --surface:#122628; --ink:#e6f1f0; --muted:#9db6b8; --line:#23403f;
+  --sea:#4fc2c4; --sea-soft:#163638; --on-sea:#062224; --sun:#f2b93b; --sun-soft:#2e2712; --closed:#e58275; color-scheme:dark }
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:clamp(2.4rem,10vw,4.2rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.6rem;font-weight:800}
+h3{font-size:1.08rem;font-weight:600}
+p{margin:0}
+a{color:var(--sea)}
+a:focus-visible{outline:2px solid var(--sun);outline-offset:2px}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--sea)}
+header{display:flex;flex-direction:column;gap:12px}
+.lead{color:var(--muted);max-width:60ch}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.stats div{flex:1 1 120px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.stats b{display:block;font-family:var(--display);font-size:1.5rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.stats span{font-size:.82rem;color:var(--muted)}
+.house{background:var(--sea);color:#fff;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .house{background:#0e4f53}}
+:root[data-theme="dark"] .house{background:#0e4f53}
+.house .eyebrow{color:#bfe8e8}
+.house h2{color:#fff}
+.house a{color:#fff;font-weight:700}
+.facts{display:flex;flex-wrap:wrap;gap:6px}
+.facts span{background:rgba(255,255,255,.14);border-radius:999px;padding:3px 10px;font-size:.85rem}
+section{display:flex;flex-direction:column;gap:14px}
+.sec-head{display:flex;flex-direction:column;gap:4px}
+.sec-head p{color:var(--muted);font-size:.95rem}
+.list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.item>div{min-width:0}
+.item p{font-size:.93rem;color:var(--muted)}
+.dist{font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;color:var(--sea)}
+.dist small{display:block;font-family:var(--body);font-weight:400;font-size:.75rem;color:var(--muted)}
+.item .map{justify-self:start;display:inline-flex;align-items:center;gap:4px;margin-top:8px;padding:4px 12px;border-radius:999px;border:1.5px solid var(--sea);color:var(--sea);font-size:.8rem;font-weight:700;text-decoration:none}
+.item .map::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.item .map:hover{background:var(--sea);color:var(--on-sea)}
+.item>div:first-child{display:flex;flex-direction:column;align-items:flex-start}
+.week{display:flex;gap:4px;margin-top:6px;flex-wrap:wrap}
+.week i{font-style:normal;font-size:.72rem;font-weight:700;padding:1px 7px;border-radius:5px;background:var(--sea-soft);color:var(--sea)}
+.week i.no{background:transparent;color:var(--closed);text-decoration:line-through;border:1px solid var(--line)}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--sun-soft);color:var(--ink);margin-left:4px;vertical-align:1px}
+.note{background:var(--sun-soft);border-radius:12px;padding:14px 16px;font-size:.93rem}
+/* fechas clave */
+.dates{display:flex;flex-direction:column;border-left:2px solid var(--line);margin-left:6px}
+.date{position:relative;padding:0 0 16px 18px}
+.date::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--sea)}
+.date.now::before{background:var(--sun);border-color:var(--sun)}
+.date b{font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums}
+.date p{font-size:.93rem;color:var(--muted)}
+.date .todo{margin:6px 0 0;padding-left:18px;font-size:.93rem}
+/* quién está cuándo */
+.tl-wrap{overflow-x:auto}
+.tl{display:grid;grid-template-columns:62px repeat(8,minmax(30px,1fr));row-gap:6px;min-width:320px;font-size:.8rem}
+.tl .h{text-align:center;color:var(--muted);font-variant-numeric:tabular-nums;line-height:1.1;padding-bottom:4px}
+.tl .h b{display:block;font-family:var(--display);font-size:.95rem;color:var(--ink)}
+.tl .n{grid-column:1;align-self:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700;padding-right:6px}
+.tl .bg{grid-column:2 / 10;height:26px;border-radius:6px;background:var(--sea-soft)}
+.tl .bar{height:26px;border-radius:6px;background:var(--sea);color:var(--on-sea);align-self:center;display:flex;justify-content:space-between;align-items:center;padding:0 6px;font-size:.72rem;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;min-width:0}
+.tl .bar.tbd{background:repeating-linear-gradient(45deg,var(--sea) 0 6px,transparent 6px 10px);border:1.5px solid var(--sea);color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:10px;border-radius:3px;margin-right:5px;vertical-align:0}
+.tl-note{font-size:.85rem;color:var(--muted)}
+/* clima */
+.wx{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.wx div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 4px;text-align:center;display:flex;flex-direction:column;gap:2px}
+.wx div.casa{border-color:var(--sea);background:var(--sea-soft)}
+.wx b{font-family:var(--display);font-size:1.25rem;line-height:1}
+.wx span{font-size:.72rem;color:var(--muted)}
+.wx em{font-style:normal;font-size:.8rem;font-variant-numeric:tabular-nums;color:var(--muted)}
+.clim{display:flex;flex-wrap:wrap;gap:8px}
+.clim div{flex:1 1 130px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.clim b{display:block;font-family:var(--display);font-size:1.6rem;font-variant-numeric:tabular-nums;color:var(--sea)}
+.clim span{font-size:.85rem;color:var(--muted)}
+.check{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.check li{display:grid;grid-template-columns:22px 1fr;gap:8px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.check li::before{content:"";width:16px;height:16px;border:2px solid var(--sea);border-radius:4px;margin-top:3px}
+.check li span{color:var(--muted)}
+.pending{border:1.5px dashed var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;background:var(--surface)}
+.pending ul{margin:0;padding-left:20px;color:var(--muted)}
+footer{font-size:.8rem;color:var(--muted)}
+.music{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.steps{margin:0;padding-left:20px;font-size:.93rem;display:flex;flex-direction:column;gap:4px}
+.spot{align-self:flex-start;display:inline-block;padding:10px 18px;border-radius:999px;background:var(--sea);color:var(--on-sea);font-weight:700;text-decoration:none}
+.spot:hover{filter:brightness(1.08)}
+
+/* Pantallas anchas: dos columnas arriba y listas de la guía en dos columnas. En celular no cambia nada. */
+@media (min-width:1000px){
+  .wrap{max-width:1180px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px 48px;align-items:start}
+  .wrap>*{grid-column:1/-1;min-width:0}
+  .wrap>.half{grid-column:auto}
+  .wrap>section:not(.half) .list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px}
+  .tl{font-size:.85rem}
+}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Forty Licks · Florianópolis</span>
+  <h1>Jurerê 2026</h1>
+  <p class="lead">El viaje de los 40. Todo lo que ya está definido, quién llega cuándo y la guía de la zona alrededor de la casa.</p>
+  <div class="stats">
+    <div><b>14</b><span>confirmados</span></div>
+    <div><b>22 → 29</b><span>noviembre en la casa</span></div>
+    <div><b>14 h / 10 h</b><span>entrada / salida</span></div>
+  </div>
+</header>
+
+<div class="house half">
+  <span class="eyebrow">La casa</span>
+  <h2>Av. dos Búzios 2350</h2>
+  <p>Jurerê Internacional, Florianópolis – SC, CEP 88053-301</p>
+  <div class="facts"><span>7 dormitorios</span><span>19 camas</span><span>5 baños</span><span>Pileta</span><span>Jacuzzi</span><span>Parrilla</span><span>A 2–3 cuadras de la playa</span></div>
+  <p><a href="https://www.google.com/maps/search/?api=1&query=Av.+dos+B%C3%BAzios+2350+Jurer%C3%AA+Florian%C3%B3polis">Abrir en Google Maps →</a></p>
+</div>
+
+<section class="half">
+  <div class="sec-head"><span class="eyebrow">Calendario</span><h2>Fechas clave</h2></div>
+  <div class="dates">
+    <div class="date now"><b>Mié 4/11 · 21 h</b><p>Juntada en lo de Ambro. Temas a definir:</p><ul class="todo"><li>Auto sí o no</li><li>Súper y lista inicial para la casa</li><li>Quién lleva parlante, cartas y juegos</li><li>Fernet: quién despacha valija</li><li>Asados en la casa: qué días y quién se encarga</li></ul></div>
+    <div class="date"><b>Dom 22 · 14 h</b><p>Entrada a la casa.</p></div>
+    <div class="date"><b>Dom 29 · 10 h</b><p>Salida de la casa.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">El grupo</span><h2>Quién está cuándo</h2><p>Según lo que cada uno pasó por el grupo. Las aerolíneas ya movieron varios horarios: chequeá el tuyo y avisá si cambió.</p></div>
+  <p class="tl-note">En cada barra: a la izquierda la hora del vuelo de ida (sale de Buenos Aires), a la derecha la del vuelo de vuelta (sale de Floripa). Los que ya están en la isla entran a las 14 h. Fer L. tiene los horarios en la casa.</p>
+  <div class="tl-wrap"><div class="tl" id="tl" role="img" aria-label="Días que está cada uno en la casa, del 22 al 29 de noviembre"></div></div>
+  <div class="legend"><span><i style="background:var(--sea)"></i>Confirmado</span><span><i style="background:repeating-linear-gradient(45deg,var(--sea) 0 3px,transparent 3px 5px);border:1px solid var(--sea)"></i>Sin pasaje todavía</span></div>
+
+</section>
+
+<section class="half">
+  <div class="sec-head"><span class="eyebrow">Clima</span><h2>Pronóstico del 22 al 29</h2><p>Todavía faltan más de dos semanas: un pronóstico día por día a esta distancia no es confiable. Se completa unos 10 días antes y se va ajustando hasta el viaje.</p></div>
+  <div class="wx" aria-label="Días del 22 al 29 de noviembre">
+    <div><span>dom</span><b>22</b><em>—</em></div>
+    <div><span>lun</span><b>23</b><em>—</em></div>
+    <div><span>mar</span><b>24</b><em>—</em></div>
+    <div><span>mié</span><b>25</b><em>—</em></div>
+    <div><span>jue</span><b>26</b><em>—</em></div>
+    <div><span>vie</span><b>27</b><em>—</em></div>
+    <div><span>sáb</span><b>28</b><em>—</em></div>
+    <div><span>dom</span><b>29</b><em>—</em></div>
+  </div>
+  <p style="font-size:.9rem;color:var(--muted)">Mientras tanto, lo normal para noviembre en Florianópolis (promedio de 30 años):</p>
+  <div class="clim">
+    <div><b>19°</b><span>mínima promedio</span></div>
+    <div><b>24°</b><span>máxima promedio</span></div>
+    <div><b>122 mm</b><span>lluvia en el mes</span></div>
+  </div>
+  <div class="note">Primavera tirando a verano: días templados y alguna lluvia probable en la semana. Llevar un buzo liviano para la noche y algo para la lluvia.</div>
+</section>
+
+<section class="half">
+  <div class="sec-head"><span class="eyebrow">Allá</span><h2>Cómo moverse</h2></div>
+  <div class="list">
+    <div class="item"><div><h3>Aeropuerto → casa</h3><p>Aeropuerto Hercílio Luz (FLN), el único de la isla. Hasta Jurerê se va en Uber.</p></div><div class="dist">~30′<small>Uber</small></div></div>
+    <div class="item"><div><h3>¿Auto o Uber?</h3><p>Una Spin lleva 7 personas. Para moverse por la isla, por ahora la tendencia del grupo es Uber. Se define en la juntada.</p></div><div class="dist"></div></div>
+  </div>
+</section>
+
+<section class="half">
+  <div class="sec-head"><span class="eyebrow">Equipaje</span><h2>Qué llevar</h2></div>
+  <ul class="check">
+    <li><div>DNI o pasaporte vigente</div></li>
+    <li><div>Fernet <span>· solo en valija despachada; en carry-on no se puede, salvo comprado en el free shop</span></div></li>
+    <li><div>Parlante</div></li>
+    <li><div>Cartas y otros juegos</div></li>
+    <li><div>Malla, ojotas, protector solar y un buzo liviano</div></li>
+  </ul>
+</section>
+
+<section class="music half">
+  <div class="sec-head"><span class="eyebrow">Música</span><h2>Flor ipa</h2><p>La playlist del viaje es colaborativa: cualquiera del grupo puede sumar temas.</p></div>
+  <ol class="steps">
+    <li>Tocá el botón para abrir la playlist en Spotify.</li>
+    <li>Si es la primera vez, tocá “Unirme” o el ícono de agregar persona para sumarte como colaborador.</li>
+    <li>Tocá “Agregar a esta playlist” y buscá el tema. También podés, desde cualquier tema, ir a “Agregar a playlist” y elegir Flor ipa.</li>
+  </ol>
+  <a class="spot" href="https://open.spotify.com/playlist/0JR06K8kNCTTZvViA51Fl5">Sumar temas en Spotify</a>
+</section>
+
+<div class="note"><strong>Guía de la zona:</strong> la distancia es desde la casa, aproximada en línea recta. Los días marcados son los que el lugar abre durante la semana de la casa (dom 22 a sáb 28). Los horarios pueden cambiar en temporada: conviene confirmar por WhatsApp antes de ir.</div>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Playas</span><h2>Dónde ir a la playa</h2><p>La casa queda en el extremo oeste de Jurerê Internacional, así que hay tres playas distintas a mano.</p></div>
+  <div class="list">
+    <div class="item"><div><h3>Jurerê Internacional</h3><p>La de enfrente. Agua tranquila, arena ancha, beach clubs a lo largo. Para el día a día.</p><a class="map" href="https://www.google.com/maps/search/?api=1&query=Praia+de+Jurer%C3%AA+Internacional+Florian%C3%B3polis">Aquí</a></div><div class="dist">~250 m<small>a pie</small></div></div>
+    <div class="item"><div><h3>Praia do Forte</h3><p>Hacia el oeste. Más tranquila, con la fortaleza São José da Ponta Grossa arriba y el mejor atardecer de la zona. Restaurantes de mariscos sobre la arena.</p><a class="map" href="https://www.google.com/maps/search/?api=1&query=Praia+do+Forte+Jurer%C3%AA+Florian%C3%B3polis">Aquí</a></div><div class="dist">~1,3 km<small>por la playa</small></div></div>
+    <div class="item"><div><h3>Daniela</h3><p>Más al oeste todavía. Agua muy calma y poca gente; buena para un día sin ruido.</p><a class="map" href="https://www.google.com/maps/search/?api=1&query=Praia+da+Daniela+Florian%C3%B3polis">Aquí</a></div><div class="dist">~2,5 km<small>auto</small></div></div>
+  </div>
+  <p style="font-size:.93rem">Mati compartió una lista de mejores playas: <a href="https://maps.app.goo.gl/ekLxXawXVH7ZfUbj9">abrir en Google Maps</a></p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Víveres</span><h2>Súper, carne y panadería</h2><p>Para 14 personas conviene una compra grande el primer día y reposiciones chicas.</p></div>
+  <div class="list">
+    <div class="item"><div><h3>Fort Atacadista <span class="tag">mayorista</span></h3><p>Norte de la isla, en Canasvieiras. Precios bajos y mucha variedad, ideal para la compra grande y la bebida. Todos los días 6 a 24 h.</p><a class="map" href="https://www.google.com/maps/search/?api=1&query=Fort+Atacadista+Norte+da+Ilha&amp;query_place_id=ChIJ6xLPDXBDJ5URehE8RmcJscE">Aquí</a></div><div class="dist">~5 km<small>Uber</small></div></div>
+    <div class="item"><div><h3>Angeloni Supermercado <span class="tag">el más cerca</span></h3><p>Av. das Raias 471. Súper completo con panadería, sushi y pizzería. Todos los días 7 a 22 h.</p><a class="map" href="https://www.google.com/maps/search/?api=1&query=Angeloni+Supermercado+Jurer%C3%AA&amp;query_place_id=ChIJ47_yCABFJ5UR4H-YguwxPn0">Aquí</a></div><div class="dist">~800 m</div></div>
+    <div class="item"><div><h3>Jurerê Padaria &amp; Café</h3><p>Av. das Raias 803. Pan, facturas y café para el desayuno. Todos los días 6:30 a 22 h.</p><a class="map" href="https://www.google.com/maps/search/?api=1&query=Jurer%C3%AA+Padaria+%26+Caf%C3%A9&amp;query_place_id=ChIJI1uWyIBFJ5UR_j7TCT1w3zM">Aquí</a></div><div class="dist">~600 m</div></div>
+    <div class="item"><div><h3>Armazém 3 Jurerê <span class="tag">carne premium</span></h3><p>Mercado chico de muy buena calidad: carnicería con cortes seleccionados, verdura fresca, vinos e importados. 7 a 22 h.</p><a class="map" href="https://www.google.com/maps/search/?api=1&query=Armaz%C3%A9m+3+Jurer%C3%AA&amp;query_place_id=ChIJsxKwZbZFJ5UR0D_7XlOsGSs">Aquí</a></div><div class="dist">~2 km</div></div>
+    <div class="item"><div><h3>Imperatriz Jurerê</h3><p>El súper más grande del barrio, con mucha variedad de bebidas. Todos los días 7 a 22 h.</p><a class="map" href="https://www.google.com/maps/search/?api=1&query=Imperatriz+Supermercado+Jurer%C3%AA&amp;query_place_id=ChIJwXl3xXFEJ5URsWs493f2Rig">Aquí</a></div><div class="dist">~2,1 km</div></div>
+    <div class="item"><div><h3>Jurerê Meat House</h3><p>Carnicería y almacén, precios competitivos. 7 a 22 h.</p><a class="map" href="https://www.google.com/maps/search/?api=1&query=Jurer%C3%AA+Meat+House&amp;query_place_id=ChIJEc23lnlEJ5URuLUYVT07Hjw">Aquí</a></div><div class="dist">~2,4 km</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Bebidas</span><h2>Cerveza, vino y hielo</h2><p>Todos los súper venden alcohol. Para algo especial o de noche, estos:</p></div>
+  <div class="list">
+    <div class="item"><div><h3>Office of Liquor</h3><p>Av. dos Búzios 809, sobre nuestra misma avenida. Buena selección y precios razonables; suelen tener chopp artesanal de Schornstein. También es bar. Todos los días, hasta 22–24 h.</p><a class="map" href="https://www.google.com/maps/search/?api=1&query=Office+of+Liquor+Jurer%C3%AA&amp;query_place_id=ChIJ4800-VxEJ5URj7EpbOpiOmw">Aquí</a></div><div class="dist">~1,5 km</div></div>
+    <div class="item"><div><h3>Meteoro Conveniência <span class="tag">abre tarde</span></h3><p>Para hielo, cerveza y reposición de noche. Hasta la 1 h (vie y sáb hasta las 2 h). Más caro.</p><a class="map" href="https://www.google.com/maps/search/?api=1&query=Meteoro+Conveni%C3%AAncia+Jurer%C3%AA&amp;query_place_id=ChIJB617qExFJ5UR_EZZdx0mRbQ">Aquí</a></div><div class="dist">~2 km</div></div>
+    <div class="item"><div><h3>Empório Llicorella Priorato</h3><p>Vinoteca con etiquetas que no se consiguen fácil. Lun a sáb 10:30 a 19:30 h.</p><a class="map" href="https://www.google.com/maps/search/?api=1&query=Emp%C3%B3rio+Llicorella+Priorato+Jurer%C3%AA&amp;query_place_id=ChIJV95FT4hFJ5URTJXSTJ-e-YI">Aquí</a></div><div class="dist">~1,7 km</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Comer afuera</span><h2>Restaurantes y beach clubs</h2><p>Ojo con los días: varios beach clubs abren solo el fin de semana.</p></div>
+  <div class="list">
+    <div class="item"><div><h3>Ammo Beach</h3><p>Beach club a una cuadra y media. Reposera sin cargo si consumís. Caro.</p><div class="week"><i>dom</i><i>lun</i><i class="no">mar</i><i>mié</i><i>jue</i><i>vie</i><i class="no">sáb</i></div><a class="map" href="https://www.google.com/maps/search/?api=1&query=Ammo+Beach+Jurer%C3%AA&amp;query_place_id=ChIJHftM4TZFJ5URM0UCWRJrQbk">Aquí</a></div><div class="dist">~270 m</div></div>
+    <div class="item"><div><h3>Open Lounge</h3><p>Patio gastronómico al lado de la playa, precios accesibles, mucho lugar para grupos.</p><div class="week"><i>dom</i><i>lun</i><i>mar</i><i>mié</i><i>jue</i><i>vie</i><i>sáb</i></div><a class="map" href="https://www.google.com/maps/search/?api=1&query=Open+Lounge+Jurer%C3%AA&amp;query_place_id=ChIJvagZnl9EJ5URoUB8DPDWz88">Aquí</a></div><div class="dist">~550 m</div></div>
+    <div class="item"><div><h3>Olivia Cucina</h3><p>Italiano, pastas y pizzas. Para una cena de grupo conviene reservar.</p><div class="week"><i>dom</i><i>lun</i><i class="no">mar</i><i>mié</i><i>jue</i><i>vie</i><i>sáb</i></div><a class="map" href="https://www.google.com/maps/search/?api=1&query=Olivia+Cucina+Jurer%C3%AA&amp;query_place_id=ChIJC-1HNApFJ5URPenhwNWa5QU">Aquí</a></div><div class="dist">~550 m</div></div>
+    <div class="item"><div><h3>300 Cosmo Beach Club</h3><p>El beach club más conocido; vie y sáb a la noche se arma fiesta con DJ. Se paga la reposera y se descuenta en consumo.</p><div class="week"><i>dom</i><i class="no">lun</i><i class="no">mar</i><i class="no">mié</i><i class="no">jue</i><i>vie</i><i>sáb</i></div><a class="map" href="https://www.google.com/maps/search/?api=1&query=300+Cosmo+Beach+Club+Jurer%C3%AA&amp;query_place_id=ChIJg7Ish_VEJ5URQN-rI4b6NEc">Aquí</a></div><div class="dist">~530 m</div></div>
+    <div class="item"><div><h3>Folha Beach Club</h3><p>Deck sobre la playa, ostras y atardecer; de noche, fiesta hasta tarde. Mesa baja con consumo mínimo.</p><div class="week"><i>dom</i><i class="no">lun</i><i class="no">mar</i><i class="no">mié</i><i class="no">jue</i><i class="no">vie</i><i>sáb</i></div><a class="map" href="https://www.google.com/maps/search/?api=1&query=Folha+Beach+Club+Jurer%C3%AA&amp;query_place_id=ChIJxzAStfFFJ5UR_oldP3rFJz8">Aquí</a></div><div class="dist">~1 km</div></div>
+    <div class="item"><div><h3>Pescador Lobo · Bill Sunset · Pôr do Sol</h3><p>Los tres en Praia do Forte, sobre la arena, muy bien puntuados. Mariscos, ostras gratinadas y el atardecer. Cierran a la tarde (17 a 18:30 h).</p><div class="week"><i>dom</i><i>lun</i><i>mar</i><i>mié</i><i>jue</i><i>vie</i><i>sáb</i></div><a class="map" href="https://www.google.com/maps/search/?api=1&query=Restaurante+Pescador+Lobo+Praia+do+Forte&amp;query_place_id=ChIJPQKtWR1FJ5UR78P9ksH6YKk">Aquí</a></div><div class="dist">~1,3 km</div></div>
+    <div class="item"><div><h3>MeatShop Parrilla</h3><p>Parrilla con buena picanha, por si un día nadie quiere prender el fuego.</p><div class="week"><i>dom</i><i class="no">lun</i><i>mar</i><i>mié</i><i>jue</i><i>vie</i><i>sáb</i></div><a class="map" href="https://www.google.com/maps/search/?api=1&query=MeatShop+Parrilla+Jurer%C3%AA&amp;query_place_id=ChIJHVquBWZEJ5URhDxalerfCiY">Aquí</a></div><div class="dist">~1,4 km</div></div>
+    <div class="item"><div><h3>Fino Sabor</h3><p>Buffet de mediodía frente al mar, buena relación precio-calidad; costilla de la casa y mariscos.</p><div class="week"><i>dom</i><i>lun</i><i>mar</i><i>mié</i><i>jue</i><i>vie</i><i>sáb</i></div><a class="map" href="https://www.google.com/maps/search/?api=1&query=Fino+Sabor+Jurer%C3%AA&amp;query_place_id=ChIJwV2FRMpFJ5URXdjznjYnI6k">Aquí</a></div><div class="dist">~2 km</div></div>
+  </div>
+  <div class="note">En Brasil la mayoría de los restaurantes suma 10% de servicio a la cuenta. Siendo tantos, avisar antes y pedir mesa larga.</div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Excursiones</span><h2>Los paseos clásicos</h2><p>Precios de referencia de sitios de reserva online, para tener una idea. En la playa, hablando en persona, se consigue más barato.</p></div>
+  <div class="list">
+    <div class="item"><div><h3>Barco pirata a Anhatomirim <span class="tag">el más clásico</span></h3><p>Clásico del norte de la isla. Navega la Bahía Norte, para en la fortaleza de Anhatomirim (1739), pasa por la Baía dos Golfinhos (delfines posibles, no garantizados) y frena en una playa para nadar y comer. Almuerzo y entrada a la fortaleza se pagan aparte. También salen escunas parecidas desde Canasvieiras, a 6 km de la casa.</p><a class="map" href="https://www.civitatis.com/en/florianopolis/pirate-ship-ride">Ver excursión</a></div><div class="dist">US$ 36–39<small>por persona · 6 h</small></div></div>
+    <div class="item"><div><h3>Isla de Campeche <span class="tag">la más linda</span></h3><p>El “Caribe catarinense”: agua turquesa y arena blanca. Barco desde Barra da Lagoa o Armação. La isla tiene cupo diario y la entrada se paga aparte: conviene ir temprano.</p><a class="map" href="https://www.civitatis.com/br/florianopolis/barco-ilha-campeche-lagoa-conceicao/">Ver excursión</a></div><div class="dist">US$ 40–91<small>por persona · 6–8 h</small></div></div>
+    <div class="item"><div><h3>Lagoa, Joaquina y Barra da Lagoa</h3><p>Recorrido por miradores, la Lagoa da Conceição, las dunas de Joaquina (sandboard) y Barra da Lagoa. Sirve para conocer el este de la isla en un día.</p><a class="map" href="https://www.civitatis.com/en/florianopolis/joaquina-beach-barra-da-lagoa-viewpoint-tour">Ver excursión</a></div><div class="dist">desde US$ 35<small>por persona · 8 h</small></div></div>
+    <div class="item"><div><h3>Costa da Lagoa</h3><p>Caminata por la orilla de la laguna hasta restaurantes a los que solo se llega a pie o en barco; se vuelve en lancha.</p></div><div class="dist">US$ 28–82<small>por persona · 4–7 h</small></div></div>
+    <div class="item"><div><h3>Santo Antônio de Lisboa</h3><p>Pueblo colonial azoriano en la bahía, con ostras frescas y uno de los mejores atardeceres de la isla. A unos 15 km de la casa.</p></div><div class="dist">desde US$ 24<small>por persona · 2 h</small></div></div>
+    <div class="item"><div><h3>Trekking a Lagoinha do Leste</h3><p>Trilha de unas horas hasta una playa salvaje con laguna, en el sur. Para los que quieran caminar.</p></div><div class="dist">desde US$ 64<small>por persona · 6 h</small></div></div>
+    <div class="item"><div><h3>Clase de surf</h3><p>En Barra da Lagoa o Campeche, las playas con mejores olas para aprender.</p></div><div class="dist">desde US$ 46<small>por persona · 1 h 30</small></div></div>
+    <div class="item"><div><h3>Pub crawl</h3><p>Recorrido de bares guiado en grupo.</p></div><div class="dist">desde US$ 47<small>por persona · 3 h 30</small></div></div>
+    <div class="item"><div><h3>Día en Bombinhas</h3><p>Fuera de la isla, a unas 2 h: playas de agua clara, buenas para snorkel.</p></div><div class="dist">desde US$ 23<small>por persona · 8 h 30</small></div></div>
+  </div>
+</section>
+
+<footer>Datos de lugares: Google Maps, consultados el 4/11/2026. Clima promedio: Climatempo. Excursiones: precios de Civitatis al 4/11/2026. Vuelos y fechas: lo informado en el grupo. Última actualización: 4/11/2026.</footer>
+</div>
+
+<script>
+(function(){
+  // [nombre, llega, se va, hora ida, hora vuelta, confirmado]
+  var people=[
+    ["Mario",22,29,"14 h","19:45",1],["Toto",22,29,"14 h","",1],["Ambro",22,29,"14 h","",1],["Fede",22,29,"14 h","",1],
+    ["Boti",22,29,"9:40","",1],["Juan J.",22,29,"","",1],
+    ["Facu",22,27,"14 h","",1],["Leza",22,27,"9:40","22:00",1],["Mati",22,27,"9:40","22:00",1],["Nico I.",22,27,"16:45","19:45",1],["Maro",22,27,"","",0],
+    ["Peto",22,26,"14 h","23:00",1],
+    ["Fer L.",24,27,"23:30","16 h",1],["Rama",25,29,"noche","",1]
+  ];
+  var dows=["dom","lun","mar","mié","jue","vie","sáb","dom"];
+  var tl=document.getElementById("tl"); if(!tl) return;
+  var html='<div></div>';
+  for(var d=22;d<=29;d++){html+='<div class="h"><b>'+d+'</b>'+dows[d-22]+'</div>';}
+  var row=2;
+  people.forEach(function(p){
+    html+='<div class="n" style="grid-row:'+row+'">'+p[0]+'</div>';
+    html+='<div class="bg" style="grid-row:'+row+'"></div>';
+    html+='<div class="bar'+(p[5]?'':' tbd')+'" title="'+p[0]+': '+p[1]+' al '+p[2]+'" style="grid-row:'+row+';grid-column:'+(p[1]-20)+' / '+(p[2]-19)+'"><span>'+p[3]+'</span><span>'+(p[5]?p[4]:'sin pasaje')+'</span></div>';
+    row++;
+  });
+  tl.innerHTML=html;
+})();
+</script>
+
+</body>
+</html>
