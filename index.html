@@ -107,6 +107,11 @@ section{display:flex;flex-direction:column;gap:14px}
 .pending{border:1.5px dashed var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;background:var(--surface)}
 .pending ul{margin:0;padding-left:20px;color:var(--muted)}
 footer{font-size:.8rem;color:var(--muted)}
+.photos{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.photos-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.qr{width:148px;height:148px;background:#fff;padding:8px;border-radius:10px;border:1px solid var(--line);image-rendering:pixelated;flex:none}
+.photos-how{display:flex;flex-direction:column;gap:10px;flex:1 1 180px;min-width:0;font-size:.93rem}
+.photos-how .spot{align-self:flex-start}
 .music{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
 .steps{margin:0;padding-left:20px;font-size:.93rem;display:flex;flex-direction:column;gap:4px}
 .spot{align-self:flex-start;display:inline-block;padding:10px 18px;border-radius:999px;background:var(--sea);color:var(--on-sea);font-weight:700;text-decoration:none}
@@ -213,6 +218,18 @@ footer{font-size:.8rem;color:var(--muted)}
     <li>Tocá “Agregar a esta playlist” y buscá el tema. También podés, desde cualquier tema, ir a “Agregar a playlist” y elegir Flor ipa.</li>
   </ol>
   <a class="spot" href="https://open.spotify.com/playlist/0JR06K8kNCTTZvViA51Fl5">Sumar temas en Spotify</a>
+</section>
+
+<section class="photos">
+  <div class="sec-head"><span class="eyebrow">Fotos</span><h2>El rollo del viaje</h2><p>Todas las fotos van a un mismo álbum en Lumerollo. Cada uno sube las suyas durante el viaje, y apenas termina aparecen todas juntas.</p></div>
+  <div class="photos-row">
+    <img class="qr" alt="Código QR para subir fotos al álbum del viaje en Lumerollo" width="148" height="148" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAAAAADRE4smAAAGGUlEQVR42u3d0XEbMQxF0edMmmH/xaAOd5AOlBUMrCz7nN9kpLXmDvcDQ/LjM/xmf/wEAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAAvJu/j/7xbH97Xf7y6j1lzf91dfUpz/aTjPzOVgCvAASAABAAAkAACAABIAAEgAAQAPml08Bcnmdddkambpf/4+VJ4czo7rTGhi/9na0AXgEIAAEgAASAABAAAkAACAABIABiGpj2uKmaH1kTT9Ic6zWf5NGA8Rv9zlYABIAAEAACEAACQAAIAAEgAASAAIhp4IstHOS5fqToGd/jZwVAAAgAASAABIAAEAACQAAIAAEgAPIDp4HVO4PzTFzyt3B0pxUAASAABIAAEAACQAAIAAEgAARA3mkYdPOEpG7de1bN4yxHro2793e2AngFIAAEgAAQAAJAAAgAASAABIAAiGlgpq5By8Do7tGErF45unvlCZlWAASAABAAAkAACAABIAAEgAAQAAIgz0wD3+OExGrO2ar3kTU/uisrAAJAAAgAASAABIAAEAACQAAIAAGQu6eB594x2CvveJs5yHPk8NF7R4pWAK8ABIAAEAACQAAIAAEgAASAABAAP9jHZ3pTquZssL7NcaMbO/6qN2A8vY8c+Z2tAF4BCAABIAAEgAAQAAJAAAgAASAA4t7ADE2wutv6zvyAsTK9/2/juc7y9kwrgFcAAkAACAABIAAEgAAQAAJAAMQwKF+6nm3+Q7rHWW6Pfx5NbrK8t81BkQgAASAABIAAEAACQAAIAAEgAARAlraG1fiMLyPDuvo2U7eFC/lGfgYrgFcAAkAACAABIAAEgAAQAAJAAAiA/NJr45LlO8sWtvVl+1THk+WjG2t+lmoaiAAQAAJAAAgAASAABIAABIAAEAAxDbzBuffw0YWRYvWea32W2vwQK4BXAAJAAAgAASAABIAAEAACQAAIgDgpNO3hU3f/34N/OyMb5s78fYaV8dmgewPxCkAACAABIAAEgAAQAAJAAAgAAZCVaeCZ2IO3sEWu5k8Kndm6dyau9RvZbnicFIpXAAJAAAgAASAABIAAEAACQADkua1hyfLRkAt7zzJ/q9ujr6vlP3zhtEkrgFcAAkAACAABIAAEgAAQAAJAAAiAuDYuK1ewpbdfqubveMv8SLFeeROdaSACQAAIAAEgAASAABAAAkAACAAB8NTewOrNBkfGc9e/IBMHMo6c6pjtfZaujcMrAAEgAASAABAAAkAACAABIAAEQKaujUtv+FTbx3p271IbuYmulvdSXj989NgbiFcAAkAACAABIAAEgAAQAAJAAAiAPHFS6MgWuZo/N3RmQ17N77o78+eGZmLXZVkBEAACQAAIAAEgAASAAATgJxAAAkAAxDQwC+Oms7Bv8IfdG5iBcaa9gXgFIAAEgAAQAAJAAAgAASAABED2hkGZn4ms7z2rjF/kVnFtHF4BCAABIAAEgAAQAAJAAAgAASAA8h7XxmV++HS2T0/M9qmOl2eWNb8ZzAqAABAAAkAACAABIAAEgAAQAAJAAGRqGrgwgqv5rYh17wTz0UfW/JM0B4yujcMrAAEgAASAABAAAkAACAABIAAEwH+mgev72ZqztOuDr5Gr7tbvfzv37rq0AiAABIAAEIAAEAACQAAIAAEgAARATAOzf89eemO9M/J1E3cWZn3D5Mg9i/YGIgAEgAAQAAJAAAgAASAAASAABEBMAzM01sutx42e7c16md9ueLaHiPYGIgAEgAAQAAJAAAgAASAABIAAyJeGQevO9j6u0zuysjn+mblLb/4LrABeAQgAASAABIAAEAACQAAIAAEgAGIaeL+aGIrV9tawkXMpL3/dwp9qBfAKQAAIAAEgAASAABAAAkAACAABENPAvPj8x9y6N3D9hMyzPWC0AiAABIAAEAACQAAIAAEgAASAABAAT00Dt+dS+5v8qvcfT+9JTsaf+YwMGK0ACAABIAAEIAAEgAAQAAJAAAgAAfBbfHz6DawACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACIA38w+WSvgBDW834wAAAABJRU5ErkJggg==">
+    <div class="photos-how">
+      <p><strong>Desde el celu:</strong> tocá el botón.</p>
+      <a class="spot" href="https://lumerollo.com/e/pp7ZFkBdLTCUVEjueet0TA==">Subir fotos</a>
+      <p><strong>Desde otro dispositivo:</strong> escaneá el código con la cámara.</p>
+    </div>
+  </div>
 </section>
 
 <div class="note"><strong>Guía de la zona:</strong> la distancia es desde la casa, aproximada en línea recta. Los días marcados son los que el lugar abre durante la semana de la casa (dom 22 a sáb 28). Los horarios pueden cambiar en temporada: conviene confirmar por WhatsApp antes de ir.</div>
