@@ -107,6 +107,15 @@ section{display:flex;flex-direction:column;gap:14px}
 .pending{border:1.5px dashed var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;background:var(--surface)}
 .pending ul{margin:0;padding-left:20px;color:var(--muted)}
 footer{font-size:.8rem;color:var(--muted)}
+.kn-note{font-size:.85rem;color:var(--muted)}
+.bracket{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px}
+.bracket .half{display:block;font-size:.78rem;color:var(--muted);margin-bottom:4px}
+.ties{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ties li{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:.93rem}
+.ties li span:first-child{font-weight:700}
+.ties li span:last-child{text-align:right}
+.ties em{font-style:normal;font-size:.72rem;color:var(--muted)}
+.ties li.boca{border-left:4px solid #1d3f8f;padding-left:8px;background:linear-gradient(90deg,rgba(242,185,59,.16),transparent 70%)}
 .sub{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
 .matches{display:flex;flex-direction:column;border-top:1px solid var(--line)}
 .match{display:grid;grid-template-columns:70px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
@@ -271,6 +280,23 @@ footer{font-size:.8rem;color:var(--muted)}
     <div class="match"><b class="mday">Sáb 28</b><div><h3>Final de la Copa Libertadores: Palmeiras vs Estudiantes <span class="tag">el partido del año</span></h3><p>Estadio Centenario, Montevideo. Con Palmeiras en la final, en Brasil se va a vivir a full.</p></div></div>
     <div class="match"><b class="mday">28 y 29</b><div><h3>Cuartos del Clausura</h3><p>Las cuatro llaves.</p></div></div>
   </div>
+  <h3 class="sub">Octavos del Clausura · cómo quedarían hoy</h3>
+  <p class="kn-note">Provisorio: los cruces se confirman al terminar la última fecha, del 5 al 8 de noviembre. Partido único, de local el mejor ubicado (el primero de cada cruce).</p>
+  <div class="bracket">
+    <div><b class="half">Lado 1 del cuadro</b><ul class="ties">
+      <li><span>Instituto</span><em>vs</em><span>Sarmiento</span></li>
+      <li><span>Rosario Central</span><em>vs</em><span>Independiente</span></li>
+      <li class="boca"><span>Boca</span><em>vs</em><span>Independiente Rivadavia</span></li>
+      <li><span>Argentinos Juniors</span><em>vs</em><span>Gimnasia (Mendoza)</span></li>
+    </ul></div>
+    <div><b class="half">Lado 2 del cuadro</b><ul class="ties">
+      <li><span>Vélez</span><em>vs</em><span>Barracas Central</span></li>
+      <li><span>Gimnasia (La Plata)</span><em>vs</em><span>Newell's</span></li>
+      <li><span>Defensa y Justicia</span><em>vs</em><span>Belgrano</span></li>
+      <li><span>River</span><em>vs</em><span>Lanús</span></li>
+    </ul></div>
+  </div>
+  <p class="kn-note">Después: cuartos el 28 o 29/11, semifinales el 5 o 6/12 y la final el sábado 12/12 en el Estadio Único de La Plata.</p>
   <h3 class="sub">Brasileirão · fecha 36</h3>
   <div class="matches">
     <div class="match"><b class="mday">Sáb 21</b><div><h3>Palmeiras vs Flamengo <span class="tag">antes de la casa</span></h3><p>16:30 · el partidazo de la fecha.</p></div></div>
