@@ -107,6 +107,13 @@ section{display:flex;flex-direction:column;gap:14px}
 .pending{border:1.5px dashed var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;background:var(--surface)}
 .pending ul{margin:0;padding-left:20px;color:var(--muted)}
 footer{font-size:.8rem;color:var(--muted)}
+.sub{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.matches{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.match{display:grid;grid-template-columns:70px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.match.boca{border-left:4px solid #1d3f8f;padding-left:10px;background:linear-gradient(90deg,rgba(242,185,59,.16),transparent 70%)}
+.match .mday{font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums}
+.match p{font-size:.9rem;color:var(--muted)}
+@media (min-width:1000px){.matches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px}}
 .sec-head.has-ic{display:grid;grid-template-columns:46px minmax(0,1fr);column-gap:12px;row-gap:2px;align-items:center}
 .sec-head.has-ic .ic{grid-row:1 / 3}
 .sec-head.has-ic>p{grid-column:1 / -1;margin-top:8px}
@@ -250,6 +257,29 @@ footer{font-size:.8rem;color:var(--muted)}
   </div>
 </section>
 
+<section>
+  <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5l4 2.9-1.5 4.6h-5L8 10.4z"/><path d="M12 3v4.5M16 10.4l4.4-1.4M14.5 15l2.7 3.7M9.5 15l-2.7 3.7M8 10.4L3.6 9"/></svg></span><span class="eyebrow">Fútbol</span><h2>Partidos de la semana</h2><p>Para organizar dónde y cuándo verlos. Los horarios son de Argentina, que es la misma hora que Floripa.</p></div>
+  <h3 class="sub">Juega Boca</h3>
+  <div class="matches">
+    <div class="match boca"><b class="mday">Sáb 21</b><div><h3>Final de la Copa Sudamericana: Boca vs Atlético Mineiro <span class="tag">antes de la casa</span></h3><p>Partido único en Barranquilla, Colombia. Horario a confirmar.</p></div></div>
+    <div class="match boca"><b class="mday">Mié 25</b><div><h3>Octavos del Clausura: Boca vs probable Independiente Rivadavia <span class="tag">a confirmar</span></h3><p>Fecha probable, corrida por la final de la Sudamericana. Rival y horario se confirman después de la última fecha (7/11). De local.</p></div></div>
+    <div class="match boca"><b class="mday">28 o 29</b><div><h3>Cuartos del Clausura</h3><p>Si Boca pasa los octavos.</p></div></div>
+  </div>
+  <h3 class="sub">Liga Argentina y copas</h3>
+  <div class="matches">
+    <div class="match"><b class="mday">21 y 22</b><div><h3>Octavos del Clausura</h3><p>El resto de las llaves, partido único en cancha del mejor ubicado.</p></div></div>
+    <div class="match"><b class="mday">Sáb 28</b><div><h3>Final de la Copa Libertadores: Palmeiras vs Estudiantes <span class="tag">el partido del año</span></h3><p>Estadio Centenario, Montevideo. Con Palmeiras en la final, en Brasil se va a vivir a full.</p></div></div>
+    <div class="match"><b class="mday">28 y 29</b><div><h3>Cuartos del Clausura</h3><p>Las cuatro llaves.</p></div></div>
+  </div>
+  <h3 class="sub">Brasileirão · fecha 36</h3>
+  <div class="matches">
+    <div class="match"><b class="mday">Sáb 21</b><div><h3>Palmeiras vs Flamengo <span class="tag">antes de la casa</span></h3><p>16:30 · el partidazo de la fecha.</p></div></div>
+    <div class="match"><b class="mday">Dom 22</b><div><h3>Fluminense vs Mirassol</h3><p>18:30</p></div></div>
+    <div class="match"><b class="mday">Lun 23</b><div><h3>Botafogo vs São Paulo · Santos vs Grêmio</h3><p>20:00 y 21:00</p></div></div>
+    <div class="match"><b class="mday">Mié 25</b><div><h3>Atlético Mineiro vs Corinthians</h3><p>20:00</p></div></div>
+  </div>
+</section>
+
 <div class="note"><strong>Guía de la zona:</strong> la distancia es desde la casa, aproximada en línea recta. Los días marcados son los que el lugar abre durante la semana de la casa (dom 22 a sáb 28). Los horarios pueden cambiar en temporada: conviene confirmar por WhatsApp antes de ir.</div>
 
 <section>
@@ -315,7 +345,17 @@ footer{font-size:.8rem;color:var(--muted)}
   </div>
 </section>
 
-<footer>Datos de lugares: Google Maps, consultados el 4/11/2026. Clima promedio: Climatempo. Excursiones: precios de Civitatis al 4/11/2026. Vuelos y fechas: lo informado en el grupo. Última actualización: 4/11/2026.</footer>
+<section>
+  <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15h20l-3 5H5z"/><path d="M5 15l2.5-5h8l3.5 5"/><path d="M9.5 10V7h4.5l1.5 3"/></svg></span><span class="eyebrow">Barco privado</span><h2>Un día en yate para los 16</h2><p>Lanchas y yates con marinero que salen de Jurerê y llevan a todo el grupo junto. El precio base incluye barco, marinero y combustible; parrilla a bordo, bebidas y catering se arreglan aparte con cada empresa. Precios de lista en temporada baja: hablando directo se negocia.</p></div>
+  <div class="list">
+    <div class="item"><div><h3>Maré Alta Charter</h3><p>Salen de Jurerê Internacional. Para el grupo entero: Ferretti 55 (hasta 19 personas), Phantom 560 (20), Azimut 560 (22) o Intermarine 560 (17). Recorrido típico: Ilha do Francês, Praia do Forte, Anhatomirim e Ilha dos Golfinhos.</p><a class="map" href="https://marealtacharter.com.br/portfolio-item/aluguel-de-barco-lancha-em-jurere-internacional-florianopolis/">Ver barcos</a></div><div class="dist">desde R$ 13.800<small>por barco · ~R$ 860 c/u</small></div></div>
+    <div class="item"><div><h3>Aluguel de Lancha Jurerê</h3><p>Phantom 62 (16 personas) o Azimut 56 (17), con suites, aire, parrilla y sonido. Agregan asado, cócteles o cena a bordo, y armando el paseo a medida: Arvoredo con snorkel, Francês, Ratones, Anhatomirim. Precio a consultar. WhatsApp: +55 48 99960-7002.</p><a class="map" href="https://wa.me/5548999607002">WhatsApp</a></div><div class="dist">a consultar<small>yate para 16-17</small></div></div>
+    <div class="item"><div><h3>Dos lanchas medianas</h3><p>La opción más barata: dos lanchas de 8 o 9 personas que navegan juntas. Incluyen combustible, marinero, sonido, parrilla y snorkel; el marinero hace el asado si llevan la carne. Día completo de 9-10 a 17-18 h. Bebidas y hielo, por cuenta propia.</p><a class="map" href="https://voudelancha.com.br/website/aluguel-de-lancha-em-florianopolis-preco/">Ver precios</a></div><div class="dist">R$ 190–400<small>por persona</small></div></div>
+    <div class="item"><div><h3>Escuna privada</h3><p>Una escuna (barco tipo pirata) solo para el grupo, armada como evento. Sale de Governador Celso Ramos, frente al norte de la isla. Precio a consultar. WhatsApp: +55 48 98415-3994.</p><a class="map" href="https://wa.me/5548984153994">WhatsApp</a></div><div class="dist">a consultar<small>barco para el grupo</small></div></div>
+  </div>
+</section>
+
+<footer>Datos de lugares: Google Maps, consultados el 4/11/2026. Clima promedio: Climatempo. Excursiones: precios de Civitatis al 4/11/2026. Fútbol: Conmebol, CBF y medios deportivos al 4/11/2026. Barcos: sitios de cada empresa al 4/11/2026. Vuelos y fechas: lo informado en el grupo. Última actualización: 4/11/2026.</footer>
 </div>
 
 <script>
