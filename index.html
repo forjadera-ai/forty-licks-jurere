@@ -107,6 +107,11 @@ section{display:flex;flex-direction:column;gap:14px}
 .pending{border:1.5px dashed var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;background:var(--surface)}
 .pending ul{margin:0;padding-left:20px;color:var(--muted)}
 footer{font-size:.8rem;color:var(--muted)}
+.cuts{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.cuts dl{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 24px}
+.cuts dl div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:8px;padding:6px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.cuts dt{font-weight:700}
+.cuts dd{margin:0;color:var(--muted)}
 .match.pincha{border-left:4px solid #c8102e;padding-left:10px;background:repeating-linear-gradient(90deg,rgba(200,16,46,.12) 0 14px,transparent 14px 28px)}
 .match .mday small{display:block;font-family:var(--body);font-weight:400;font-size:.78rem;color:var(--muted)}
 .kn-note{font-size:.85rem;color:var(--muted)}
@@ -288,16 +293,39 @@ footer{font-size:.8rem;color:var(--muted)}
     <div class="item"><div><h3>Imperatriz Jurerê</h3><p>El súper más grande del barrio, con mucha variedad de bebidas. Todos los días 7 a 22 h.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Imperatriz+Supermercado+Jurer%C3%AA&amp;destination_place_id=ChIJwXl3xXFEJ5URsWs493f2Rig&amp;travelmode=walking">Aquí</a></div><div class="dist">~2,1 km<small>auto</small></div></div>
     <div class="item"><div><h3>Angeloni Supermercado <span class="tag">a pie</span></h3><p>Av. das Raias 471. Súper completo con panadería, sushi y pizzería. Todos los días 7 a 22 h.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Angeloni+Supermercado+Jurer%C3%AA&amp;destination_place_id=ChIJ47_yCABFJ5UR4H-YguwxPn0&amp;travelmode=walking">Aquí</a></div><div class="dist">~800 m<small>a pie</small></div></div>
   </div>
-  <h3 class="sub">Almacenes, carne y panadería</h3>
+  <h3 class="sub">Carne para el asado</h3>
+  <div class="list">
+    <div class="item"><div><h3>Urucarnes <span class="tag">cortes argentinos</span></h3><p>Cortes uruguayos y argentinos de verdad: vacío, asado de tira, entraña, bife de chorizo. Están en el norte de la isla y hacen delivery: confirmar por WhatsApp que lleguen a Jurerê y pedir con un día de anticipación. WhatsApp: +55 48 99215-5920.</p><a class="map" href="https://www.urucarnes.com.br/">Ver cortes</a></div><div class="dist">delivery<small>a confirmar</small></div></div>
+    <div class="item"><div><h3>Armazém 3 Jurerê <span class="tag">calidad</span></h3><p>La mejor carne del barrio según los que compran ahí: carnicería con cortes seleccionados y premium envasados, más verdura, pan y vinos. 7 a 22 h (dom 8 a 21).</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Armaz%C3%A9m+3+Jurer%C3%AA&amp;destination_place_id=ChIJsxKwZbZFJ5UR0D_7XlOsGSs&amp;travelmode=driving">Aquí</a></div><div class="dist">~2 km<small>auto</small></div></div>
+    <div class="item"><div><h3>Casa de Carnes Jurerê <span class="tag">abre todos los días</span></h3><p>Carnicería con mercado y panadería, con cortes para churrasco, linguiça y carbón. Todos los días 7 a 22 h. Opiniones mezcladas: elegir la pieza a la vista. Tel. +55 48 99911-5695.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Jurer%C3%AA+Meat+House&amp;destination_place_id=ChIJEc23lnlEJ5URuLUYVT07Hjw&amp;travelmode=driving">Aquí</a></div><div class="dist">~2,4 km<small>auto</small></div></div>
+    <div class="item"><div><h3>Dom Corte</h3><p>Casa de carnes nobles en Canasvieiras, muy bien puntuada, con atención personalizada. Lun a sáb 8:30 a 20 h, dom hasta las 14. WhatsApp: +55 48 98827-2136.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Dom+Corte+Casa+de+Carnes+Canasvieiras&amp;destination_place_id=ChIJqeSy-Y1DJ5UR17WY5lMsuTQ&amp;travelmode=driving">Aquí</a></div><div class="dist">~5,5 km<small>auto</small></div></div>
+    <div class="item"><div><h3>Açougue Canto da Carne <span class="tag">delivery</span></h3><p>Carnicería de Canasvieiras que arma kits de churrasco y hace delivery. Lun a sáb 8 a 20 h, dom hasta las 13. WhatsApp: +55 48 99208-4561.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=A%C3%A7ougue+Canto+da+Carne+Canasvieiras&amp;destination_place_id=ChIJOxVIjuRDJ5URu7rqV3DV1Lk&amp;travelmode=driving">Aquí</a></div><div class="dist">~4,5 km<small>auto</small></div></div>
+  </div>
+  <div class="cuts">
+    <h3>Cómo pedir los cortes en portugués</h3>
+    <dl>
+      <div><dt>Vacío</dt><dd>fraldinha (o vazio)</dd></div>
+      <div><dt>Asado de tira</dt><dd>costela em tiras, cortada fina</dd></div>
+      <div><dt>Entraña</dt><dd>entranha o diafragma</dd></div>
+      <div><dt>Tapa de cuadril</dt><dd>picanha</dd></div>
+      <div><dt>Colita de cuadril</dt><dd>maminha</dd></div>
+      <div><dt>Bife de chorizo</dt><dd>contrafilé</dd></div>
+      <div><dt>Ojo de bife</dt><dd>ancho</dd></div>
+      <div><dt>Matambre</dt><dd>matambre</dd></div>
+      <div><dt>Chorizo</dt><dd>linguiça (campeira o toscana)</dd></div>
+      <div><dt>Morcilla</dt><dd>morcela</dd></div>
+      <div><dt>Mollejas</dt><dd>molejas</dd></div>
+      <div><dt>Carbón y sal gruesa</dt><dd>carvão y sal grosso</dd></div>
+    </dl>
+  </div>
+  <h3 class="sub">Almacenes y panadería</h3>
   <div class="list">
     <div class="item"><div><h3>Mercado Ilha do Francês <span class="tag">el más cerca</span></h3><p>En el Open Shopping, Av. dos Salmões 800. Minimercado para salir del paso: almacén, bebida fría, hielo y cosas de playa. Todos los días 8 a 22 h.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Mercado+Ilha+do+Franc%C3%AAs+Open+Shopping+Jurer%C3%AA&amp;destination_place_id=ChIJBzG_1DJFJ5URR5N7u89PpOU&amp;travelmode=walking">Aquí</a></div><div class="dist">~600 m<small>a pie</small></div></div>
     <div class="item"><div><h3>Jurerê Padaria &amp; Café</h3><p>Av. das Raias 803. Pan, facturas y café para el desayuno. Todos los días 6:30 a 22 h.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Jurer%C3%AA+Padaria+%26+Caf%C3%A9&amp;destination_place_id=ChIJI1uWyIBFJ5UR_j7TCT1w3zM&amp;travelmode=walking">Aquí</a></div><div class="dist">~600 m<small>a pie</small></div></div>
     <div class="item"><div><h3>Empório São Queijo <span class="tag">picada</span></h3><p>Quesos, fiambres y vinos para la picada. Todos los días.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Emp%C3%B3rio+S%C3%A3o+Queijo+Jurer%C3%AA&amp;destination_place_id=ChIJFU-QZwBFJ5URwLvJ1lgLHrA&amp;travelmode=walking">Aquí</a></div><div class="dist">~1,8 km<small>auto</small></div></div>
     <div class="item"><div><h3>Mercado LB</h3><p>Almacén de playa en Daniela, con buena variedad y precios razonables. Todos los días 8 a 20 h.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Mercado+LB+Daniela+Florian%C3%B3polis&amp;destination_place_id=ChIJiZQ1VZpFJ5URDn9VL-22ukA&amp;travelmode=walking">Aquí</a></div><div class="dist">~1,9 km<small>auto</small></div></div>
     <div class="item"><div><h3>Mercado Skina</h3><p>A la entrada de la playa Daniela. Súper chico con panadería y bebidas. 7 a 22 h (martes hasta las 20).</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Mercado+Skina+Praia+Daniela&amp;destination_place_id=ChIJPwb65alFJ5URdl-BBlps68I&amp;travelmode=walking">Aquí</a></div><div class="dist">~2 km<small>auto</small></div></div>
-    <div class="item"><div><h3>Armazém 3 Jurerê <span class="tag">carne premium</span></h3><p>Mercado chico de muy buena calidad: carnicería con cortes seleccionados, verdura fresca, vinos e importados. 7 a 22 h.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Armaz%C3%A9m+3+Jurer%C3%AA&amp;destination_place_id=ChIJsxKwZbZFJ5UR0D_7XlOsGSs&amp;travelmode=walking">Aquí</a></div><div class="dist">~2 km<small>auto</small></div></div>
     <div class="item"><div><h3>Feria del productor <span class="tag">mar y vie</span></h3><p>Frutas y verduras frescas a buen precio, en Jurerê Tradicional. Martes y viernes a la mañana (caen el 24 y el 27).</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Feira+do+Produtor+Jurer%C3%AA+Sacol%C3%A3o+Kremer&amp;destination_place_id=ChIJ68ljtMJFJ5URtyg75UE8QoM&amp;travelmode=walking">Aquí</a></div><div class="dist">~2,3 km<small>auto</small></div></div>
-    <div class="item"><div><h3>Jurerê Meat House</h3><p>Carnicería y almacén, precios competitivos. 7 a 22 h.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&amp;origin=Av.+dos+B%C3%BAzios+2350%2C+Jurer%C3%AA+Internacional%2C+Florian%C3%B3polis&amp;origin_place_id=ChIJC7XvufdEJ5URSyx6qcl6UB4&amp;destination=Jurer%C3%AA+Meat+House&amp;destination_place_id=ChIJEc23lnlEJ5URuLUYVT07Hjw&amp;travelmode=walking">Aquí</a></div><div class="dist">~2,4 km<small>auto</small></div></div>
   </div>
 </section>
 
@@ -395,7 +423,7 @@ footer{font-size:.8rem;color:var(--muted)}
   </div>
 </section>
 
-<footer>Datos de lugares: Google Maps, consultados el 10/11/2026. Clima promedio: Climatempo. Excursiones: precios de Civitatis al 4/11/2026. Fútbol: Conmebol, CBF y medios deportivos al 9/11/2026. Barcos: sitios de cada empresa al 4/11/2026. Vuelos y fechas: lo informado en el grupo. Última actualización: 10/11/2026.</footer>
+<footer>Datos de lugares: Google Maps, consultados el 10/11/2026. Clima promedio: Climatempo. Excursiones: precios de Civitatis al 4/11/2026. Fútbol: Conmebol, CBF y medios deportivos al 9/11/2026. Barcos: sitios de cada empresa al 4/11/2026. Vuelos y fechas: lo informado en el grupo. Última actualización: 11/11/2026.</footer>
 </div>
 
 <script>
