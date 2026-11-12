@@ -107,6 +107,16 @@ section{display:flex;flex-direction:column;gap:14px}
 .pending{border:1.5px dashed var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;background:var(--surface)}
 .pending ul{margin:0;padding-left:20px;color:var(--muted)}
 footer{font-size:.8rem;color:var(--muted)}
+.wx .wd{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 6px;text-align:center;display:flex;flex-direction:column;gap:3px}
+.wx .wd span{font-size:.72rem;color:var(--muted)}
+.wx .wd b{font-family:var(--display);font-size:1.25rem;line-height:1}
+.wx .wd em{font-style:normal;font-weight:700;font-size:.9rem;font-variant-numeric:tabular-nums}
+.wx .wd strong{font-weight:400;font-size:.76rem;line-height:1.25}
+.wx .wd small{font-size:.7rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.wx .wd.sun{background:var(--sun-soft);border-color:var(--sun)}
+.wx .wd.rain{background:var(--sea-soft);border-color:var(--sea)}
+.wx .wd.na{opacity:.6}
+@media (min-width:600px){.wx{grid-template-columns:repeat(8,minmax(0,1fr))}}
 .branca{background:var(--surface);border:1px solid var(--line);border-left:4px solid #3a2a20;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
 .branca-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
 .branca-head span{font-size:.85rem;color:var(--muted)}
@@ -212,24 +222,19 @@ footer{font-size:.8rem;color:var(--muted)}
 </section>
 
 <section class="half">
-  <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3.5"/><path d="M9 2v1.5M2 9h1.5M4 4l1 1M14 4l-1 1"/><path d="M8 21h9a4 4 0 0 0 0-8 5 5 0 0 0-9.5 1.6A3.2 3.2 0 0 0 8 21z"/></svg></span><span class="eyebrow">Clima</span><h2>Pronóstico del 22 al 29</h2><p>Todavía faltan más de dos semanas: un pronóstico día por día a esta distancia no es confiable. Se completa unos 10 días antes y se va ajustando hasta el viaje.</p></div>
-  <div class="wx" aria-label="Días del 22 al 29 de noviembre">
-    <div><span>dom</span><b>22</b><em>—</em></div>
-    <div><span>lun</span><b>23</b><em>—</em></div>
-    <div><span>mar</span><b>24</b><em>—</em></div>
-    <div><span>mié</span><b>25</b><em>—</em></div>
-    <div><span>jue</span><b>26</b><em>—</em></div>
-    <div><span>vie</span><b>27</b><em>—</em></div>
-    <div><span>sáb</span><b>28</b><em>—</em></div>
-    <div><span>dom</span><b>29</b><em>—</em></div>
+  <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3.5"/><path d="M9 2v1.5M2 9h1.5M4 4l1 1M14 4l-1 1"/><path d="M8 21h9a4 4 0 0 0 0-8 5 5 0 0 0-9.5 1.6A3.2 3.2 0 0 0 8 21z"/></svg></span><span class="eyebrow">Clima</span><h2>Pronóstico del 22 al 29</h2><p>Windguru, spot Praia do Forte, al lado de la casa. Modelo GFS, actualizado el jueves 12/11. A más de una semana es orientativo: se va a ir ajustando.</p></div>
+  <div class="wx">
+    <div class="wd ok"><span>dom</span><b>22</b><em>20–23°</em><strong>Nubes y sol</strong><small>0 mm · 8 kt</small></div>
+    <div class="wd rain"><span>lun</span><b>23</b><em>19–21°</em><strong>Lluvia</strong><small>11 mm · 10 kt</small></div>
+    <div class="wd mid"><span>mar</span><b>24</b><em>18–22°</em><strong>Nubes, lloviznas</strong><small>1 mm · 11 kt</small></div>
+    <div class="wd ok"><span>mié</span><b>25</b><em>17–21°</em><strong>Parcial, viento a la tarde</strong><small>0,6 mm · 13 kt</small></div>
+    <div class="wd sun"><span>jue</span><b>26</b><em>18–22°</em><strong>El más lindo</strong><small>1,5 mm · 10 kt</small></div>
+    <div class="wd rain"><span>vie</span><b>27</b><em>19–20°</em><strong>Lluvia</strong><small>22 mm · 12 kt</small></div>
+    <div class="wd na"><span>sáb</span><b>28</b><em>—</em><strong>Sin dato todavía</strong></div>
+    <div class="wd na"><span>dom</span><b>29</b><em>—</em><strong>Sin dato todavía</strong></div>
   </div>
-  <p style="font-size:.9rem;color:var(--muted)">Mientras tanto, lo normal para noviembre en Florianópolis (promedio de 30 años):</p>
-  <div class="clim">
-    <div><b>19°</b><span>mínima promedio</span></div>
-    <div><b>24°</b><span>máxima promedio</span></div>
-    <div><b>122 mm</b><span>lluvia en el mes</span></div>
-  </div>
-  <div class="note">Primavera tirando a verano: días templados y alguna lluvia probable en la semana. Llevar un buzo liviano para la noche y algo para la lluvia.</div>
+  <p class="kn-note">Temperatura mínima y máxima, lluvia acumulada del día y viento máximo en nudos. Lo más probable: lunes 23 y viernes 27 con lluvia; martes a jueves más estables, y el jueves 26 el mejor día de playa. AccuWeather coincide con lluvia el lunes y el martes, pero da máximas más altas, de 24 a 27°. El sábado 28 y el domingo 29 todavía no entran en el pronóstico.</p>
+  <div class="note">Primavera tirando a verano: días templados y alguna lluvia en la semana. Llevar un buzo liviano para la noche, algo para la lluvia y protector solar: el índice UV pasa 10 aunque esté nublado.</div>
 </section>
 
 <section class="half">
@@ -432,7 +437,7 @@ footer{font-size:.8rem;color:var(--muted)}
   </div>
 </section>
 
-<footer>Datos de lugares: Google Maps, consultados el 10/11/2026. Clima promedio: Climatempo. Excursiones: precios de Civitatis al 4/11/2026. Fútbol: Conmebol, CBF y medios deportivos al 9/11/2026. Vuelos y fechas: lo informado en el grupo. Última actualización: 11/11/2026.</footer>
+<footer>Datos de lugares: Google Maps, consultados el 10/11/2026. Clima: Windguru (GFS) y AccuWeather al 12/11/2026. Excursiones: precios de Civitatis al 4/11/2026. Fútbol: Conmebol, CBF y medios deportivos al 9/11/2026. Vuelos y fechas: lo informado en el grupo. Última actualización: 12/11/2026.</footer>
 </div>
 
 <script>
