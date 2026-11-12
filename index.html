@@ -107,6 +107,12 @@ section{display:flex;flex-direction:column;gap:14px}
 .pending{border:1.5px dashed var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;background:var(--surface)}
 .pending ul{margin:0;padding-left:20px;color:var(--muted)}
 footer{font-size:.8rem;color:var(--muted)}
+.branca{background:var(--surface);border:1px solid var(--line);border-left:4px solid #3a2a20;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.branca-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
+.branca-head span{font-size:.85rem;color:var(--muted)}
+.branca ol{margin:0;padding:0;list-style:none;counter-reset:b;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px 16px}
+.branca li{counter-increment:b;display:flex;align-items:center;gap:8px;font-weight:700}
+.branca li::before{content:counter(b);display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--sea-soft);color:var(--sea);font-size:.8rem;font-variant-numeric:tabular-nums}
 .cuts{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
 .cuts dl{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 24px}
 .cuts dl div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:8px;padding:6px 0;border-bottom:1px solid var(--line);font-size:.92rem}
@@ -201,7 +207,7 @@ footer{font-size:.8rem;color:var(--muted)}
   <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.4 5 2.8 5 5.8"/></svg></span><span class="eyebrow">El grupo</span><h2>Quién está cuándo</h2><p>Según lo que cada uno pasó por el grupo. Las aerolíneas ya movieron varios horarios: chequeá el tuyo y avisá si cambió.</p></div>
   <p class="tl-note">En cada barra: a la izquierda la hora del vuelo de ida (sale de Buenos Aires), a la derecha la del vuelo de vuelta (sale de Floripa). Los que ya están en la isla entran a las 14 h. Fer L. tiene los horarios en la casa.</p>
   <div class="tl-wrap"><div class="tl" id="tl" role="img" aria-label="Días que está cada uno en la casa, del 22 al 29 de noviembre"></div></div>
-  <div class="legend"><span><i style="background:var(--sea)"></i>Confirmado</span><span><i style="background:repeating-linear-gradient(45deg,var(--sea) 0 3px,transparent 3px 5px);border:1px solid var(--sea)"></i>Sin pasaje todavía</span></div>
+  <div class="legend"><span><i style="background:var(--sea)"></i>Confirmado</span></div>
 
 </section>
 
@@ -240,11 +246,22 @@ footer{font-size:.8rem;color:var(--muted)}
   <ul class="check">
     <li><div>DNI o pasaporte vigente</div></li>
     <li><div>Pix listo en Mercado Pago <span>· o en la app que uses para pagar allá</span></div></li>
-    <li><div>Fernet <span>· solo en valija despachada; en carry-on no se puede, salvo comprado en el free shop</span></div></li>
+    <li><div>Fernet <span>· los de la Lista Branca, comprado en el free shop</span></div></li>
     <li><div>Parlante</div></li>
     <li><div>Cartas y otros juegos</div></li>
     <li><div>Malla, ojotas, protector solar y un buzo liviano</div></li>
   </ul>
+  <div class="branca">
+    <div class="branca-head"><h3>Lista Branca</h3><span>Cada uno compra un Fernet en el free shop</span></div>
+    <ol>
+      <li>Mario</li>
+      <li>Ambro</li>
+      <li>Mati</li>
+      <li>Toto</li>
+      <li>Fede</li>
+      <li>Boti</li>
+    </ol>
+  </div>
 </section>
 
 <section class="music half">
@@ -424,7 +441,7 @@ footer{font-size:.8rem;color:var(--muted)}
   var people=[
     ["Mario",22,29,"14 h","19:45",1],["Toto",22,29,"14 h","",1],["Ambro",22,29,"14 h","",1],["Fede",22,29,"14 h","",1],
     ["Boti",22,29,"9:40","",1],["Juan J.",22,29,"","",1],
-    ["Facu",22,27,"14 h","",1],["Leza",22,27,"9:40","22:00",1],["Mati",22,27,"9:40","22:00",1],["Nico I.",22,27,"16:45","19:45",1],["Maro",22,27,"","",0],
+    ["Facu",22,27,"14 h","",1],["Leza",22,27,"9:40","22:00",1],["Mati",22,27,"9:40","22:00",1],["Nico I.",22,27,"16:45","19:45",1],["Maro",22,27,"16:49","19:45",1],
     ["Peto",22,26,"14 h","23:00",1],
     ["Fer L.",24,27,"23:30","16 h",1],["Rama",25,29,"noche","",1],["Pablito",26,29,"19:15","19:45",1]
   ];
