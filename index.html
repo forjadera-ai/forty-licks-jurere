@@ -220,7 +220,7 @@ footer{font-size:.8rem;color:var(--muted)}
 
 <section>
   <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.4 5 2.8 5 5.8"/></svg></span><span class="eyebrow">El grupo</span><h2>Quién está cuándo</h2><p>Según lo que cada uno pasó por el grupo. Las aerolíneas ya movieron varios horarios: chequeá el tuyo y avisá si cambió.</p></div>
-  <p class="tl-note">En cada barra: a la izquierda la hora del vuelo de ida (sale de Buenos Aires), a la derecha la del vuelo de vuelta (sale de Floripa). Los que ya están en la isla entran a las 14 h. Fer L. tiene los horarios en la casa.</p>
+  <p class="tl-note">En cada barra: a la izquierda, la hora de llegada a Floripa (con el día, para los que llegan antes de entrar a la casa); a la derecha, la hora del vuelo de vuelta.</p>
   <div class="tl-wrap"><div class="tl" id="tl" role="img" aria-label="Días que está cada uno en la casa, del 22 al 29 de noviembre"></div></div>
   <div class="legend"><span><i style="background:var(--sea)"></i>Confirmado</span></div>
 
@@ -447,11 +447,11 @@ footer{font-size:.8rem;color:var(--muted)}
 (function(){
   // [nombre, llega, se va, hora ida, hora vuelta, confirmado]
   var people=[
-    ["Mario",22,29,"14 h","19:45",1],["Toto",22,29,"14 h","",1],["Ambro",22,29,"14 h","",1],["Fede",22,29,"14 h","",1],
-    ["Boti",22,29,"9:40","",1],["Juan J.",22,29,"","",1],
-    ["Facu",22,27,"14 h","",1],["Leza",22,27,"9:40","22:00",1],["Mati",22,27,"9:40","22:00",1],["Nico I.",22,27,"16:45","19:45",1],["Maro",22,27,"16:49","19:45",1],
-    ["Peto",22,26,"14 h","23:00",1],
-    ["Fer L.",24,27,"23:30","19:45",1],["Rama",25,29,"noche","",1],["Pablito",26,29,"19:15","19:45",1]
+    ["Mario",22,29,"vie 20 · 22:30","19:45",1],["Toto",22,29,"vie 20 · 22:30","17:15",1],["Ambro",22,29,"vie 20 · 22:30","17:15",1],["Fede",22,29,"vie 20 · 22:30","17:15",1],
+    ["Boti",22,29,"11:40","",1],["Juan J.",22,29,"","",1],
+    ["Facu",22,27,"vie 20 · 23:40","",1],["Leza",22,27,"11:40","22:00",1],["Mati",22,27,"11:40","22:00",1],["Nico I.",22,27,"18:50","19:45",1],["Maro",22,27,"18:50","19:45",1],
+    ["Peto",22,26,"sáb 21 · 7:00","23:00",1],
+    ["Fer L.",24,27,"22:30","19:45",1],["Rama",25,29,"22:30","19:45",1],["Pablito",26,29,"19:15","19:45",1]
   ];
   var dows=["dom","lun","mar","mié","jue","vie","sáb","dom"];
   var tl=document.getElementById("tl"); if(!tl) return;
