@@ -137,7 +137,8 @@ footer{font-size:.8rem;color:var(--muted)}
 .cuts dl div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:8px;padding:6px 0;border-bottom:1px solid var(--line);font-size:.92rem}
 .cuts dt{font-weight:700}
 .cuts dd{margin:0;color:var(--muted)}
-.match.pincha{border-left:4px solid #c8102e;padding-left:10px;background:repeating-linear-gradient(90deg,rgba(200,16,46,.12) 0 14px,transparent 14px 28px)}
+.match.pincha{border-left:8px solid #d0102e;padding-left:12px;background:var(--surface);box-shadow:inset 0 0 0 2px rgba(208,16,46,.55);border-radius:0 8px 8px 0;padding-right:10px}
+.match.pincha .tag{background:#d0102e;color:#fff}
 .match .mday small{display:block;font-family:var(--body);font-weight:400;font-size:.78rem;color:var(--muted)}
 .kn-note{font-size:.85rem;color:var(--muted)}
 .bracket{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px}
@@ -233,14 +234,14 @@ footer{font-size:.8rem;color:var(--muted)}
 <section class="half">
   <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3.5"/><path d="M9 2v1.5M2 9h1.5M4 4l1 1M14 4l-1 1"/><path d="M8 21h9a4 4 0 0 0 0-8 5 5 0 0 0-9.5 1.6A3.2 3.2 0 0 0 8 21z"/></svg></span><span class="eyebrow">Clima</span><h2>Pronóstico del 22 al 29</h2></div>
   <div class="wx">
-    <div class="wd rain"><span>dom</span><b>22</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 14h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 7.5 3.3 3.3 0 0 0 7 14z"/><path d="M8.5 17l-1 3M12.5 17l-1 3M16.5 17l-1 3"/></svg><em>21–23°</em><strong>Lluvia</strong><small>~9 mm · 9 kt</small></div>
-    <div class="wd mid"><span>lun</span><b>23</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>22–24°</em><strong>Nublado, llovizna</strong><small>2 mm · 7 kt</small></div>
-    <div class="wd rain"><span>mar</span><b>24</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 14h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 7.5 3.3 3.3 0 0 0 7 14z"/><path d="M8.5 17l-1 3M12.5 17l-1 3M16.5 17l-1 3"/></svg><em>22–23°</em><strong>Lluvia</strong><small>~9 mm · 8 kt</small></div>
-    <div class="wd mid"><span>mié</span><b>25</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>21–25°</em><strong>Lluvia débil y viento</strong><small>5 mm · 16 kt</small></div>
-    <div class="wd mid"><span>jue</span><b>26</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>20–22°</em><strong>Nublado, llovizna</strong><small>2 mm · 10 kt</small></div>
-    <div class="wd rain"><span>vie</span><b>27</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 14h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 7.5 3.3 3.3 0 0 0 7 14z"/><path d="M8.5 17l-1 3M12.5 17l-1 3M16.5 17l-1 3"/></svg><em>19–20°</em><strong>Lluvia fuerte</strong><small>~35 mm · 5 kt</small></div>
-    <div class="wd ok"><span>sáb</span><b>28</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 11.5 3.3 3.3 0 0 0 7 18z"/></svg><em>20–22°</em><strong>Nublado</strong><small>1 mm · 5 kt</small></div>
-    <div class="wd sun"><span>dom</span><b>29</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg><em>18–23°</em><strong>Soleado</strong><small>0 mm · 8 kt</small></div>
+    <div class="wd rain"><span>dom</span><b>22</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 14h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 7.5 3.3 3.3 0 0 0 7 14z"/><path d="M12.5 15l-2 3.5h3l-2 3.5"/></svg><em>21–23°</em><strong>Lluvia y tormenta a la tarde</strong><small>lluvia 90 %</small></div>
+    <div class="wd ok"><span>lun</span><b>23</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 11.5 3.3 3.3 0 0 0 7 18z"/></svg><em>21–26°</em><strong>Nublado</strong><small>lluvia 25 %</small></div>
+    <div class="wd rain"><span>mar</span><b>24</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 14h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 7.5 3.3 3.3 0 0 0 7 14z"/><path d="M12.5 15l-2 3.5h3l-2 3.5"/></svg><em>22–26°</em><strong>Chubascos y tormenta</strong><small>lluvia 90 %</small></div>
+    <div class="wd mid"><span>mié</span><b>25</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>19–27°</em><strong>Algún chubasco a la mañana</strong><small>lluvia 70 %</small></div>
+    <div class="wd ok"><span>jue</span><b>26</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 11.5 3.3 3.3 0 0 0 7 18z"/></svg><em>18–23°</em><strong>Nublado, menos húmedo</strong><small>lluvia 25 %</small></div>
+    <div class="wd ok"><span>vie</span><b>27</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 11.5 3.3 3.3 0 0 0 7 18z"/></svg><em>19–24°</em><strong>Nublado</strong><small>lluvia 13 %</small></div>
+    <div class="wd mid"><span>sáb</span><b>28</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>18–26°</em><strong>Lluvia ocasional</strong><small>lluvia 55 %</small></div>
+    <div class="wd mid"><span>dom</span><b>29</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>19–26°</em><strong>Algo de lluvia a la mañana</strong><small>lluvia 57 %</small></div>
   </div>
   <div class="note">Primavera tirando a verano: días templados y alguna lluvia en la semana. Llevar un buzo liviano para la noche, algo para la lluvia y protector solar: el índice UV pasa 10 aunque esté nublado.</div>
 </section>
@@ -412,13 +413,19 @@ footer{font-size:.8rem;color:var(--muted)}
   <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5l4 2.9-1.5 4.6h-5L8 10.4z"/><path d="M12 3v4.5M16 10.4l4.4-1.4M14.5 15l2.7 3.7M9.5 15l-2.7 3.7M8 10.4L3.6 9"/></svg></span><span class="eyebrow">Fútbol</span><h2>Partidos de la semana</h2><p>Para organizar dónde y cuándo verlos. Los horarios son de Argentina, que es la misma hora que Floripa.</p></div>
   <h3 class="sub">Juega Boca</h3>
   <div class="matches">
-    <div class="match boca"><b class="mday">Sáb 21</b><div><h3>Final de la Copa Sudamericana: Boca vs Atlético Mineiro <span class="tag">antes de la casa</span></h3><p>Partido único en Barranquilla, Colombia. Horario a confirmar.</p></div></div>
-    <div class="match boca"><b class="mday">Mié 25?</b><div><h3>Octavos del Clausura: Boca vs Independiente Rivadavia <span class="tag">fecha a confirmar</span></h3><p>Confirmado el rival, en la Bombonera. Los octavos son el 21 y 22, pero Boca juega ese sábado la final de la Sudamericana: su partido se espera para el miércoles 25. Día y horario los confirma la Liga.</p></div></div>
+    <div class="match boca"><b class="mday">Sáb 21<small>19:30</small></b><div><h3>Final de la Copa Sudamericana: Boca vs Atlético Mineiro <span class="tag">antes de la casa</span></h3><p>Partido único en Barranquilla, Colombia.</p></div></div>
+    <div class="match boca"><b class="mday">Mié 25<small>21 h</small></b><div><h3>Octavos del Clausura: Boca vs Independiente Rivadavia</h3><p>En la Bombonera. ESPN Premium.</p></div></div>
     <div class="match boca"><b class="mday">28 o 29</b><div><h3>Cuartos del Clausura</h3><p>Si Boca pasa los octavos.</p></div></div>
   </div>
   <h3 class="sub">Liga Argentina y copas</h3>
   <div class="matches">
-    <div class="match"><b class="mday">21 y 22</b><div><h3>Octavos del Clausura</h3><p>El resto de las llaves, partido único en cancha del mejor ubicado.</p></div></div>
+    <div class="match"><b class="mday">Vie 20<small>20 h</small></b><div><h3>Octavos: Vélez vs Belgrano</h3><p>TNT Sports</p></div></div>
+    <div class="match"><b class="mday">Sáb 21<small>15 h</small></b><div><h3>Octavos: Defensa y Justicia vs Barracas Central</h3><p>ESPN Premium</p></div></div>
+    <div class="match"><b class="mday">Sáb 21<small>17 h</small></b><div><h3>Octavos: Argentinos Juniors vs Independiente</h3><p>TNT Sports</p></div></div>
+    <div class="match"><b class="mday">Dom 22<small>16 h</small></b><div><h3>Octavos: Rosario Central vs Gimnasia (Mendoza)</h3><p>ESPN Premium</p></div></div>
+    <div class="match"><b class="mday">Dom 22<small>19 h</small></b><div><h3>Octavos: River vs Lanús</h3><p>TNT Sports</p></div></div>
+    <div class="match"><b class="mday">Dom 22<small>22 h</small></b><div><h3>Octavos: Instituto vs Huracán</h3><p>ESPN Premium</p></div></div>
+    <div class="match"><b class="mday">Lun 23<small>17 h</small></b><div><h3>Octavos: Gimnasia (La Plata) vs Newell's</h3><p>TNT Sports</p></div></div>
     <div class="match pincha"><b class="mday">Sáb 28<small>17 h</small></b><div><h3>Final de la Copa Libertadores: Palmeiras vs Estudiantes <span class="tag">Fer va a la cancha</span></h3><p>Estadio Centenario, Montevideo. Fer vuelve de Floripa y se va directo a ver al Pincha. Los que se quedan en la casa, a verlo juntos y a hinchar por Estudiantes. En Brasil se va a vivir a full con Palmeiras en la final.</p></div></div>
     <div class="match"><b class="mday">28 y 29</b><div><h3>Cuartos del Clausura</h3><p>Las cuatro llaves.</p></div></div>
   </div>
@@ -448,7 +455,7 @@ footer{font-size:.8rem;color:var(--muted)}
   </div>
 </section>
 
-<footer>Datos de lugares: Google Maps, consultados el 10/11/2026. Clima: Windguru (GFS, Praia do Forte) al 20/11/2026. Excursiones: precios de Civitatis al 4/11/2026. Fútbol: Conmebol, CBF y medios deportivos al 9/11/2026. Vuelos y fechas: lo informado en el grupo. Última actualización: 20/11/2026.</footer>
+<footer>Datos de lugares: Google Maps, consultados el 10/11/2026. Clima: AccuWeather al 21/11/2026. Excursiones: precios de Civitatis al 4/11/2026. Fútbol: Conmebol, Liga Profesional, CBF y medios deportivos al 21/11/2026. Vuelos y fechas: lo informado en el grupo. Última actualización: 21/11/2026.</footer>
 </div>
 
 <script>
