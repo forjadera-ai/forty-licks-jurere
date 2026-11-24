@@ -73,6 +73,8 @@ header{display:flex;flex-direction:column;gap:12px}
 .calc-out .big{font-family:var(--display);font-size:2rem;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
 .calc-out p{margin:0;font-size:.92rem}
 .calc-out .who{opacity:.9}
+.calc .acts{display:flex;flex-wrap:wrap;gap:8px}
+.calc .share{background:var(--sea)!important;color:var(--on-sea)!important}
 .calc .copy{font:inherit;font-weight:700;border:0;border-radius:999px;padding:11px 18px;background:var(--sun);color:#1d1600;cursor:pointer;justify-self:start}
 .payer{border:1.5px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:10px;position:relative}
 .payer h4{margin:0;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sea)}
@@ -259,7 +261,7 @@ footer{font-size:.8rem;color:var(--muted)}
       <p id="c-sub">por persona</p>
       <ul class="tx" id="c-tx"></ul>
     </div>
-    <button type="button" class="copy" id="c-copy">Copiar mensaje para el grupo</button>
+    <div class="acts"><button type="button" class="copy share" id="c-share">Compartir</button><button type="button" class="copy" id="c-copy">Copiar mensaje para el grupo</button></div>
     <p class="hint">Hasta 3 pueden haber pagado. Cada uno elige la cotización de la billetera o tarjeta con la que pagó, así nadie pierde. Nada de esto se guarda: si recargás la página, se borra.</p>
   </form>
 </section>
@@ -527,17 +529,24 @@ footer{font-size:.8rem;color:var(--muted)}
   $('c-add').onclick=function(){addPayer();render()};
   $('c-all').onclick=function(){box.querySelectorAll('input').forEach(function(i){i.checked=true});render()};
   $('c-none').onclick=function(){box.querySelectorAll('input').forEach(function(i){i.checked=false});render()};
-  $('c-copy').onclick=function(){
-    var st=state();if(!st.n||!st.payers.length){$('c-n').textContent='Falta lo que pagaron o quiénes entran';return}
+  function msg(){
+    var st=state();if(!st.n||!st.payers.length){$('c-n').textContent='Falta lo que pagaron o quiénes entran';return null}
     var money=function(v){return st.cur==='BRL'?'R$ '+fmt(v,2):'$'+fmt(v,0)};
-    var t=(st.what?st.what.charAt(0).toUpperCase()+st.what.slice(1)+'\n':'')+
+    return (st.what?st.what.charAt(0).toUpperCase()+st.what.slice(1)+'\n':'')+
       st.payers.map(function(p){return p.key+' pagó '+money(p.amt)+(st.cur==='BRL'?' con '+p.how.replace(' ($',' a $').replace(/\)$/,''):'')}).join('\n')+'\n'+
       (st.payers.length>1?'Total: '+money(st.totalAmt)+'\n':'')+
       'Entran '+st.n+': '+st.ppl.join(', ')+(st.extra?' y '+st.extra+' más':'')+'.\n'+
       'Cada uno: *$'+fmt(Math.ceil(st.share),0)+'*'+(st.shareBRL?' (R$ '+fmt(st.shareBRL,2)+')':'')+'.\n\nTransferencias:\n'+
       st.tx.map(function(x){return '• '+x.from+' → '+x.to+(st.alias[x.to]?' ('+st.alias[x.to]+')':'')+': $'+fmt(x.v,0)}).join('\n');
-    var done=function(){var b=$('c-copy');b.textContent='¡Copiado! Pegalo en el grupo';setTimeout(function(){b.textContent='Copiar mensaje para el grupo'},2500)};
+  }
+  function copy(t,btn,label){
+    var done=function(){btn.textContent='¡Copiado! Pegalo en el grupo';setTimeout(function(){btn.textContent=label},2500)};
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback(t);done()})}else{fallback(t);done()}
+  }
+  $('c-copy').onclick=function(){var t=msg();if(t)copy(t,$('c-copy'),'Copiar mensaje para el grupo')};
+  $('c-share').onclick=function(){var t=msg();if(!t)return;
+    if(navigator.share){navigator.share({title:'Cuentas Jurerê',text:t}).catch(function(){})}
+    else copy(t,$('c-share'),'Compartir');
   };
   function fallback(t){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a)}
   addPayer();render();
