@@ -43,6 +43,15 @@ header{display:flex;flex-direction:column;gap:12px}
 .fx-k{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
 .fx b{display:block;font-family:var(--display);font-size:1.7rem;line-height:1.1;font-variant-numeric:tabular-nums}
 .fx-d{font-size:.82rem;color:var(--muted)}
+.fx-top{flex-basis:100%;display:grid;gap:6px;margin:6px 0 2px;padding:0;list-style:none}
+.fx-top li{display:grid;grid-template-columns:7.5rem minmax(0,1fr) 4.6rem;align-items:center;gap:8px;font-size:.9rem}
+.fx-top .nm{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fx-top .bar{height:12px;border-radius:999px;background:rgba(0,0,0,.07);overflow:hidden}
+.fx-top .bar i{display:block;height:100%;border-radius:999px;background:var(--sun)}
+.fx-top li.first .bar i{background:var(--sea)}
+.fx-top .pr{font-family:var(--display);font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.fx-top li.ref{color:var(--muted)}
+.fx-top li.ref .bar i{background:var(--muted);opacity:.45}
 .house{background:var(--sea);color:#fff;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .house{background:#0e4f53}}
 :root[data-theme="dark"] .house{background:#0e4f53}
@@ -199,8 +208,9 @@ footer{font-size:.8rem;color:var(--muted)}
     <div><b>14 h / 10 h</b><span>entrada / salida</span></div>
   </div>
   <div class="fx" id="cambio">
-    <div><span class="fx-k">Cambio Pix · Mercado Pago</span><b>R$ 1 = $296,71</b></div>
-    <span class="fx-d">Actualizado el jue 19/11</span>
+    <div><span class="fx-k">Cambio Pix con pesos · la más barata hoy: Takenos</span><b>R$ 1 = $278,27</b></div>
+    <span class="fx-d">Actualizado el mar 24/11</span>
+    <ol class="fx-top" aria-label="Precio de 1 real en pesos por billetera"><li class="first"><span class="nm">Takenos</span><span class="bar"><i style="width:26%"></i></span><span class="pr">$278,27</span></li><li class=""><span class="nm">Peanut</span><span class="bar"><i style="width:40%"></i></span><span class="pr">$293,28</span></li><li class=""><span class="nm">Wallbit</span><span class="bar"><i style="width:41%"></i></span><span class="pr">$295,03</span></li><li class=""><span class="nm">Mercado Pago</span><span class="bar"><i style="width:48%"></i></span><span class="pr">$302,21</span></li><li class="ref"><span class="nm">Tarjeta</span><span class="bar"><i style="width:100%"></i></span><span class="pr">$358,80</span></li></ol>
   </div>
 </header>
 
