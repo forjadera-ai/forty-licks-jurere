@@ -531,7 +531,7 @@ footer{font-size:.8rem;color:var(--muted)}
     var st=state();if(!st.n||!st.payers.length){$('c-n').textContent='Falta lo que pagaron o quiénes entran';return}
     var money=function(v){return st.cur==='BRL'?'R$ '+fmt(v,2):'$'+fmt(v,0)};
     var t=(st.what?st.what.charAt(0).toUpperCase()+st.what.slice(1)+'\n':'')+
-      st.payers.map(function(p){return p.key+' pagó '+money(p.amt)+(st.cur==='BRL'?' ('+p.how+')':'')}).join('\n')+'\n'+
+      st.payers.map(function(p){return p.key+' pagó '+money(p.amt)+(st.cur==='BRL'?' con '+p.how.replace(' ($',' a $').replace(/\)$/,''):'')}).join('\n')+'\n'+
       (st.payers.length>1?'Total: '+money(st.totalAmt)+'\n':'')+
       'Entran '+st.n+': '+st.ppl.join(', ')+(st.extra?' y '+st.extra+' más':'')+'.\n'+
       'Cada uno: *$'+fmt(Math.ceil(st.share),0)+'*'+(st.shareBRL?' (R$ '+fmt(st.shareBRL,2)+')':'')+'.\n\nTransferencias:\n'+
