@@ -53,6 +53,27 @@ header{display:flex;flex-direction:column;gap:12px}
 .fx-top li.ref{color:var(--muted)}
 .fx-top li.ref .bar i{background:var(--muted);opacity:.45}
 .fx-top .pr small{font-weight:500;color:var(--muted);margin-right:6px;font-family:var(--body,inherit)}
+/* Dividir una compra */
+.calc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:14px}
+.calc label{display:grid;gap:4px;font-size:.85rem;font-weight:700;color:var(--muted)}
+.calc input,.calc select{font:inherit;font-size:1rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;width:100%;min-width:0}
+.calc input:focus,.calc select:focus{outline:2px solid var(--sea);outline-offset:1px}
+.calc .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.calc .amt{display:grid;grid-template-columns:auto 1fr;gap:6px}
+.calc .amt select{width:auto}
+.calc fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
+.calc legend{font-size:.85rem;font-weight:700;color:var(--muted);margin-bottom:6px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.calc legend button{font:inherit;font-size:.8rem;font-weight:700;color:var(--sea);background:none;border:1px solid var(--sea);border-radius:999px;padding:3px 10px;cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips label{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;font-size:.92rem}
+.chips input{width:auto;margin:0;accent-color:var(--sea)}
+.chips label:has(input:checked){background:var(--sea-soft);border-color:var(--sea)}
+.calc-out{background:var(--sea);color:var(--on-sea);border-radius:12px;padding:14px 16px;display:grid;gap:4px}
+.calc-out .big{font-family:var(--display);font-size:2rem;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.calc-out p{margin:0;font-size:.92rem}
+.calc-out .who{opacity:.9}
+.calc .copy{font:inherit;font-weight:700;border:0;border-radius:999px;padding:11px 18px;background:var(--sun);color:#1d1600;cursor:pointer;justify-self:start}
+.calc .hint{font-size:.8rem;color:var(--muted);margin:0}
 .fx-note{flex-basis:100%;font-size:.78rem;color:var(--muted);margin:2px 0 0}
 .house{background:var(--sea);color:#fff;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .house{background:#0e4f53}}
@@ -212,7 +233,7 @@ footer{font-size:.8rem;color:var(--muted)}
   <div class="fx" id="cambio">
     <div><span class="fx-k">Cambio Pix con pesos · la más barata hoy: Takenos</span><b>R$ 1 = $278,27</b></div>
     <span class="fx-d">Actualizado el mar 24/11</span>
-    <ol class="fx-top" aria-label="Precio de 1 real en pesos por billetera"><li class="first"><span class="nm">Takenos</span><span class="bar"><i style="width:26%"></i></span><span class="pr">$278,27</span></li><li class=""><span class="nm">Peanut</span><span class="bar"><i style="width:40%"></i></span><span class="pr">$293,28</span></li><li class=""><span class="nm">Wallbit</span><span class="bar"><i style="width:41%"></i></span><span class="pr">$295,03</span></li><li class=""><span class="nm">Mercado Pago</span><span class="bar"><i style="width:48%"></i></span><span class="pr">$302,21</span></li><li class="ref"><span class="nm">Tarjeta en US$</span><span class="bar"><i style="width:24%"></i></span><span class="pr"><small>US$ 0,17</small>$276</span></li><li class="ref"><span class="nm">Tarjeta en pesos</span><span class="bar"><i style="width:100%"></i></span><span class="pr">$358,80</span></li></ol>
+    <ol class="fx-top" aria-label="Precio de 1 real en pesos por billetera"><li class="first" data-rate="278.27"><span class="nm">Takenos</span><span class="bar"><i style="width:26%"></i></span><span class="pr">$278,27</span></li><li class="" data-rate="293.28"><span class="nm">Peanut</span><span class="bar"><i style="width:40%"></i></span><span class="pr">$293,28</span></li><li class="" data-rate="295.03"><span class="nm">Wallbit</span><span class="bar"><i style="width:41%"></i></span><span class="pr">$295,03</span></li><li class="" data-rate="302.21"><span class="nm">Mercado Pago</span><span class="bar"><i style="width:48%"></i></span><span class="pr">$302,21</span></li><li class="ref" data-rate="276"><span class="nm">Tarjeta en US$</span><span class="bar"><i style="width:24%"></i></span><span class="pr"><small>US$ 0,17</small>$276</span></li><li class="ref" data-rate="358.80"><span class="nm">Tarjeta en pesos</span><span class="bar"><i style="width:100%"></i></span><span class="pr">$358,80</span></li></ol>
     <p class="fx-note">Tarjeta en US$: pagando el resumen con dólares propios, sin el 30 %; en pesos, al dólar oficial. Tarjeta en pesos: oficial + 30 % de percepción.</p>
   </div>
 </header>
@@ -225,6 +246,34 @@ footer{font-size:.8rem;color:var(--muted)}
   <p><a href="https://www.google.com/maps/search/?api=1&query=Av.+dos+B%C3%BAzios+2350+Jurer%C3%AA+Florian%C3%B3polis">Abrir en Google Maps →</a></p>
   <p><a href="https://www.airbnb.com.ar/rooms/859286635873027398">Ver la casa en Airbnb →</a></p>
 </div>
+
+<section id="cuentas">
+  <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8 6.5h8M8 11h2M12 11h0M14 11h2M8 14.5h2M12 14.5h0M14 14.5h2M8 18h2M12 18h0M14 18h2"/></svg></span><span class="eyebrow">Cuentas</span><h2>Dividir una compra</h2><p>El que pagó carga la compra, elige quiénes entran y copia el mensaje para el grupo. Cada uno le transfiere en pesos a su alias.</p></div>
+  <form class="calc" id="calc" onsubmit="return false">
+    <div class="row2">
+      <label>Quién pagó<input id="c-who" autocomplete="off" placeholder="Ej.: Fer"></label>
+      <label>Su alias<input id="c-alias" autocomplete="off" placeholder="Ej.: fer.viaje.mp"></label>
+    </div>
+    <label>Qué se compró<input id="c-what" autocomplete="off" placeholder="Ej.: carne del asado"></label>
+    <div class="row2">
+      <label>Total<span class="amt"><select id="c-cur" aria-label="Moneda"><option value="BRL">R$</option><option value="ARS">$</option></select><input id="c-amt" inputmode="decimal" placeholder="0,00"></span></label>
+      <label>Cómo pagó<select id="c-rate"></select></label>
+    </div>
+    <label id="c-own-l" hidden>Cotización (R$ 1 = $)<input id="c-own" inputmode="decimal" placeholder="300,00"></label>
+    <fieldset>
+      <legend>Quiénes entran <button type="button" id="c-all">Todos</button><button type="button" id="c-none">Ninguno</button></legend>
+      <div class="chips" id="c-ppl"></div>
+      <label>Otros que entran y no están en la lista<input id="c-extra" inputmode="numeric" placeholder="0"></label>
+    </fieldset>
+    <div class="calc-out" aria-live="polite">
+      <p class="who" id="c-n">Elegí quiénes entran</p>
+      <span class="big" id="c-pp">$0</span>
+      <p id="c-sub">por persona</p>
+    </div>
+    <button type="button" class="copy" id="c-copy">Copiar mensaje para el grupo</button>
+    <p class="hint">Las cotizaciones son las del recuadro de arriba. Usá la de la billetera o tarjeta con la que pagaste, así nadie pierde. Nada de esto se guarda: si recargás la página, se borra.</p>
+  </form>
+</section>
 
 <section>
   <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.4 5 2.8 5 5.8"/></svg></span><span class="eyebrow">El grupo</span><h2>Quién está cuándo</h2><p>Según lo que cada uno pasó por el grupo. Las aerolíneas ya movieron varios horarios: chequeá el tuyo y avisá si cambió.</p></div>
@@ -436,6 +485,55 @@ footer{font-size:.8rem;color:var(--muted)}
     row++;
   });
   tl.innerHTML=html;
+})();
+</script>
+<script>
+(function(){
+  var names=["Mario","Toto","Ambro","Fede","Boti","Juan J.","Facu","Leza","Mati","Nico I.","Maro","Peto","Ciampa","Fer L.","Rama","Pablito"];
+  var $=function(id){return document.getElementById(id)};
+  var rs=$('c-rate');
+  document.querySelectorAll('#cambio [data-rate]').forEach(function(li){
+    var o=document.createElement('option');o.value=li.getAttribute('data-rate');
+    o.textContent=li.querySelector('.nm').textContent+' ($'+fmt(+o.value,2)+')';
+    if(li.querySelector('.nm').textContent==='Mercado Pago')o.selected=true;
+    rs.appendChild(o);
+  });
+  var oo=document.createElement('option');oo.value='own';oo.textContent='Otra cotización';rs.appendChild(oo);
+  var box=$('c-ppl');
+  names.forEach(function(n){var l=document.createElement('label');l.innerHTML='<input type="checkbox" checked> '+n;l.querySelector('input').value=n;box.appendChild(l)});
+  function num(v){v=String(v||'').trim().replace(/\s/g,'');if(v.indexOf(',')>-1)v=v.replace(/\./g,'').replace(',','.');var n=parseFloat(v);return isFinite(n)?n:0}
+  function fmt(n,d){return n.toLocaleString('es-AR',{minimumFractionDigits:d,maximumFractionDigits:d})}
+  function state(){
+    var rate=rs.value==='own'?num($('c-own').value):+rs.value;
+    var ppl=[].slice.call(box.querySelectorAll('input:checked')).map(function(i){return i.value});
+    var n=ppl.length+Math.max(0,Math.floor(num($('c-extra').value)));
+    var amt=num($('c-amt').value),cur=$('c-cur').value;
+    var totalARS=cur==='BRL'?amt*rate:amt, totalBRL=cur==='BRL'?amt:(rate?amt/rate:0);
+    return {rate:rate,ppl:ppl,n:n,amt:amt,cur:cur,ars:n?Math.ceil(totalARS/n):0,brl:n?totalBRL/n:0,totalARS:totalARS,
+      who:$('c-who').value.trim(),alias:$('c-alias').value.trim(),what:$('c-what').value.trim(),how:rs.options[rs.selectedIndex].textContent};
+  }
+  function render(){
+    $('c-own-l').hidden=rs.value!=='own';
+    var st=state();
+    $('c-n').textContent=st.n?('Entran '+st.n+(st.n===1?' persona':' personas')):'Elegí quiénes entran';
+    $('c-pp').textContent='$'+fmt(st.ars,0);
+    $('c-sub').textContent='por persona'+(st.brl?' · R$ '+fmt(st.brl,2):'')+(st.alias?' · transferir a '+st.alias:'');
+  }
+  $('calc').addEventListener('input',render);$('calc').addEventListener('change',render);
+  $('c-all').onclick=function(){box.querySelectorAll('input').forEach(function(i){i.checked=true});render()};
+  $('c-none').onclick=function(){box.querySelectorAll('input').forEach(function(i){i.checked=false});render()};
+  $('c-copy').onclick=function(){
+    var st=state();if(!st.n||!st.amt){$('c-n').textContent='Falta el total o quiénes entran';return}
+    var t=(st.what?st.what.charAt(0).toUpperCase()+st.what.slice(1)+'\n':'')+
+      (st.who||'Alguien')+' pagó '+(st.cur==='BRL'?'R$ '+fmt(st.amt,2):'$'+fmt(st.amt,0))+(st.cur==='BRL'?' ('+st.how+')':'')+'.\n'+
+      'Entran '+st.n+': '+st.ppl.join(', ')+(st.n>st.ppl.length?' y '+(st.n-st.ppl.length)+' más':'')+'.\n'+
+      'Cada uno: *$'+fmt(st.ars,0)+'*'+(st.brl?' (R$ '+fmt(st.brl,2)+')':'')+'.\n'+
+      (st.alias?'Transferir a alias: '+st.alias:'');
+    var done=function(){var b=$('c-copy');b.textContent='¡Copiado! Pegalo en el grupo';setTimeout(function(){b.textContent='Copiar mensaje para el grupo'},2500)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback(t);done()})}else{fallback(t);done()}
+  };
+  function fallback(t){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a)}
+  render();
 })();
 </script>
 
