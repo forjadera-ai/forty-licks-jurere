@@ -44,7 +44,7 @@ header{display:flex;flex-direction:column;gap:12px}
 .fx b{display:block;font-family:var(--display);font-size:1.7rem;line-height:1.1;font-variant-numeric:tabular-nums}
 .fx-d{font-size:.82rem;color:var(--muted)}
 .fx-top{flex-basis:100%;display:grid;gap:6px;margin:6px 0 2px;padding:0;list-style:none}
-.fx-top li{display:grid;grid-template-columns:7.5rem minmax(0,1fr) 4.6rem;align-items:center;gap:8px;font-size:.9rem}
+.fx-top li{display:grid;grid-template-columns:8.6rem minmax(0,1fr) auto;align-items:center;gap:8px;font-size:.9rem}
 .fx-top .nm{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .fx-top .bar{height:12px;border-radius:999px;background:rgba(0,0,0,.07);overflow:hidden}
 .fx-top .bar i{display:block;height:100%;border-radius:999px;background:var(--sun)}
@@ -52,6 +52,8 @@ header{display:flex;flex-direction:column;gap:12px}
 .fx-top .pr{font-family:var(--display);font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
 .fx-top li.ref{color:var(--muted)}
 .fx-top li.ref .bar i{background:var(--muted);opacity:.45}
+.fx-top .pr small{font-weight:500;color:var(--muted);margin-right:6px;font-family:var(--body,inherit)}
+.fx-note{flex-basis:100%;font-size:.78rem;color:var(--muted);margin:2px 0 0}
 .house{background:var(--sea);color:#fff;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .house{background:#0e4f53}}
 :root[data-theme="dark"] .house{background:#0e4f53}
@@ -210,7 +212,8 @@ footer{font-size:.8rem;color:var(--muted)}
   <div class="fx" id="cambio">
     <div><span class="fx-k">Cambio Pix con pesos · la más barata hoy: Takenos</span><b>R$ 1 = $278,27</b></div>
     <span class="fx-d">Actualizado el mar 24/11</span>
-    <ol class="fx-top" aria-label="Precio de 1 real en pesos por billetera"><li class="first"><span class="nm">Takenos</span><span class="bar"><i style="width:26%"></i></span><span class="pr">$278,27</span></li><li class=""><span class="nm">Peanut</span><span class="bar"><i style="width:40%"></i></span><span class="pr">$293,28</span></li><li class=""><span class="nm">Wallbit</span><span class="bar"><i style="width:41%"></i></span><span class="pr">$295,03</span></li><li class=""><span class="nm">Mercado Pago</span><span class="bar"><i style="width:48%"></i></span><span class="pr">$302,21</span></li><li class="ref"><span class="nm">Tarjeta</span><span class="bar"><i style="width:100%"></i></span><span class="pr">$358,80</span></li></ol>
+    <ol class="fx-top" aria-label="Precio de 1 real en pesos por billetera"><li class="first"><span class="nm">Takenos</span><span class="bar"><i style="width:26%"></i></span><span class="pr">$278,27</span></li><li class=""><span class="nm">Peanut</span><span class="bar"><i style="width:40%"></i></span><span class="pr">$293,28</span></li><li class=""><span class="nm">Wallbit</span><span class="bar"><i style="width:41%"></i></span><span class="pr">$295,03</span></li><li class=""><span class="nm">Mercado Pago</span><span class="bar"><i style="width:48%"></i></span><span class="pr">$302,21</span></li><li class="ref"><span class="nm">Tarjeta en US$</span><span class="bar"><i style="width:24%"></i></span><span class="pr"><small>US$ 0,17</small>$276</span></li><li class="ref"><span class="nm">Tarjeta en pesos</span><span class="bar"><i style="width:100%"></i></span><span class="pr">$358,80</span></li></ol>
+    <p class="fx-note">Tarjeta en US$: pagando el resumen con dólares propios, sin el 30 %; en pesos, al dólar oficial. Tarjeta en pesos: oficial + 30 % de percepción.</p>
   </div>
 </header>
 
