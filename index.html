@@ -90,7 +90,7 @@ section{display:flex;flex-direction:column;gap:14px}
 .legend i{display:inline-block;width:14px;height:10px;border-radius:3px;margin-right:5px;vertical-align:0}
 .tl-note{font-size:.85rem;color:var(--muted)}
 /* clima */
-.wx{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.wx{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
 .wx div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 4px;text-align:center;display:flex;flex-direction:column;gap:2px}
 .wx div.casa{border-color:var(--sea);background:var(--sea-soft)}
 .wx b{font-family:var(--display);font-size:1.25rem;line-height:1}
@@ -125,7 +125,7 @@ footer{font-size:.8rem;color:var(--muted)}
 .wx .wd .wi{width:30px;height:30px;margin:2px auto;color:var(--muted)}
 .wx .wd.sun .wi,.wx .wd.ok .wi{color:var(--sun)}
 .wx .wd.rain .wi,.wx .wd.mid .wi{color:var(--sea)}
-@media (min-width:600px){.wx{grid-template-columns:repeat(7,minmax(0,1fr))}}
+@media (min-width:600px){.wx{grid-template-columns:repeat(6,minmax(0,1fr))}}
 .branca{background:var(--surface);border:1px solid var(--line);border-left:4px solid #3a2a20;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
 .branca-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
 .branca-head span{font-size:.85rem;color:var(--muted)}
@@ -223,24 +223,16 @@ footer{font-size:.8rem;color:var(--muted)}
   </div>
 </section>
 
-<section>
-  <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.4 5 2.8 5 5.8"/></svg></span><span class="eyebrow">El grupo</span><h2>Quién está cuándo</h2><p>Según lo que cada uno pasó por el grupo. Las aerolíneas ya movieron varios horarios: chequeá el tuyo y avisá si cambió.</p></div>
-  <p class="tl-note">En cada barra: a la izquierda, la hora de llegada a Floripa (con el día, para los que llegan antes de entrar a la casa); a la derecha, la hora del vuelo de vuelta.</p>
-  <div class="tl-wrap"><div class="tl" id="tl" role="img" aria-label="Días que está cada uno en la casa, del 22 al 29 de noviembre"></div></div>
-  <div class="legend"><span><i style="background:var(--sea)"></i>Confirmado</span></div>
-
-</section>
 
 <section class="half">
-  <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3.5"/><path d="M9 2v1.5M2 9h1.5M4 4l1 1M14 4l-1 1"/><path d="M8 21h9a4 4 0 0 0 0-8 5 5 0 0 0-9.5 1.6A3.2 3.2 0 0 0 8 21z"/></svg></span><span class="eyebrow">Clima</span><h2>Pronóstico del 23 al 29</h2></div>
+  <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3.5"/><path d="M9 2v1.5M2 9h1.5M4 4l1 1M14 4l-1 1"/><path d="M8 21h9a4 4 0 0 0 0-8 5 5 0 0 0-9.5 1.6A3.2 3.2 0 0 0 8 21z"/></svg></span><span class="eyebrow">Clima</span><h2>Pronóstico del 24 al 29</h2></div>
   <div class="wx">
-    <div class="wd rain"><span>lun</span><b>23</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 14h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 7.5 3.3 3.3 0 0 0 7 14z"/><path d="M12.5 15l-2 3.5h3l-2 3.5"/></svg><em>22–28°</em><strong>Lluvia y tormenta</strong><small>lluvia 80 %</small></div>
-    <div class="wd rain"><span>mar</span><b>24</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 14h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 7.5 3.3 3.3 0 0 0 7 14z"/><path d="M12.5 15l-2 3.5h3l-2 3.5"/></svg><em>23–27°</em><strong>Chubascos y tormenta</strong><small>lluvia 91 %</small></div>
-    <div class="wd mid"><span>mié</span><b>25</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>19–27°</em><strong>Chubascos a la mañana</strong><small>lluvia 70 %</small></div>
-    <div class="wd sun"><span>jue</span><b>26</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 2.5v1M2.5 8h1M4.1 4.1l.7.7M11.9 4.1l-.7.7"/><path d="M9 20h8a3.5 3.5 0 0 0 .3-7 5 5 0 0 0-9.2 1.6A2.8 2.8 0 0 0 9 20z"/></svg><em>18–25°</em><strong>Sol y nubes</strong><small>lluvia 4 %</small></div>
-    <div class="wd mid"><span>vie</span><b>27</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>19–26°</em><strong>Lluvia a la tarde</strong><small>lluvia 66 %</small></div>
-    <div class="wd mid"><span>sáb</span><b>28</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>18–23°</em><strong>Nublado, algo de lluvia</strong><small>lluvia 64 %</small></div>
-    <div class="wd mid"><span>dom</span><b>29</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>21–25°</em><strong>Lluvia a la mañana</strong><small>lluvia 65 %</small></div>
+    <div class="wd rain"><span>mar</span><b>24</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 14h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 7.5 3.3 3.3 0 0 0 7 14z"/><path d="M12.5 15l-2 3.5h3l-2 3.5"/></svg><em>22–28°</em><strong>Tormenta a la tarde</strong><small>lluvia 86 %</small></div>
+    <div class="wd ok"><span>mié</span><b>25</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 11.5 3.3 3.3 0 0 0 7 18z"/></svg><em>20–27°</em><strong>Nublado</strong><small>lluvia 25 %</small></div>
+    <div class="wd ok"><span>jue</span><b>26</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 11.5 3.3 3.3 0 0 0 7 18z"/></svg><em>18–26°</em><strong>Nublado</strong><small>lluvia 7 %</small></div>
+    <div class="wd mid"><span>vie</span><b>27</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>19–25°</em><strong>Lluvia a la tarde</strong><small>lluvia 65 %</small></div>
+    <div class="wd mid"><span>sáb</span><b>28</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>19–22°</em><strong>Nublado con lluvia</strong><small>lluvia 62 %</small></div>
+    <div class="wd mid"><span>dom</span><b>29</b><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.5 3.3 3.3 0 0 0 7 15z"/><path d="M9 18.5v1M13 18.5v1M17 18.5v1"/></svg><em>21–25°</em><strong>Lluvia a la mañana</strong><small>lluvia 75 %</small></div>
   </div>
   <div class="note">Primavera tirando a verano: días templados y alguna lluvia en la semana. Llevar un buzo liviano para la noche, algo para la lluvia y protector solar: el índice UV pasa 10 aunque esté nublado.</div>
 </section>
@@ -409,33 +401,9 @@ footer{font-size:.8rem;color:var(--muted)}
   </div>
 </section>
 
-<footer>Datos de lugares: Google Maps, consultados el 10/11/2026. Clima: AccuWeather al 23/11/2026. Excursiones: precios de Civitatis al 4/11/2026. Fútbol: Conmebol, Liga Profesional, CBF y medios deportivos al 23/11/2026. Vuelos y fechas: lo informado en el grupo. Última actualización: 23/11/2026.</footer>
+<footer>Datos de lugares: Google Maps, consultados el 10/11/2026. Clima: AccuWeather al 24/11/2026. Excursiones: precios de Civitatis al 4/11/2026. Fútbol: Conmebol, Liga Profesional, CBF y medios deportivos al 23/11/2026. Vuelos y fechas: lo informado en el grupo. Última actualización: 24/11/2026.</footer>
 </div>
 
-<script>
-(function(){
-  // [nombre, llega, se va, hora ida, hora vuelta, confirmado]
-  var people=[
-    ["Mario",22,29,"vie 20 · 22:30","19:45",1],["Toto",22,29,"vie 20 · 22:30","17:15",1],["Ambro",22,29,"vie 20 · 22:30","17:15",1],["Fede",22,29,"vie 20 · 22:30","17:15",1],
-    ["Boti",22,29,"11:40","17:15",1],["Juan J.",22,29,"22:30","17:15",1],
-    ["Facu",22,27,"vie 20 · 23:40","",1],["Leza",22,27,"11:40","22:00",1],["Mati",22,27,"11:40","22:00",1],["Nico I.",22,27,"18:50","19:45",1],["Maro",22,27,"18:50","19:45",1],
-    ["Peto",22,26,"sáb 21 · 5:00","17:00",1],["Ciampa",22,25,"21 · 18:30","26 · 5:00",1],
-    ["Fer L.",24,27,"22:30","19:45",1],["Rama",25,29,"22:30","19:45",1],["Pablito",26,29,"19:15","19:45",1]
-  ];
-  var dows=["dom","lun","mar","mié","jue","vie","sáb","dom"];
-  var tl=document.getElementById("tl"); if(!tl) return;
-  var html='<div></div>';
-  for(var d=22;d<=29;d++){html+='<div class="h"><b>'+d+'</b>'+dows[d-22]+'</div>';}
-  var row=2;
-  people.forEach(function(p){
-    html+='<div class="n" style="grid-row:'+row+'">'+p[0]+'</div>';
-    html+='<div class="bg" style="grid-row:'+row+'"></div>';
-    html+='<div class="bar'+(p[5]?'':' tbd')+'" title="'+p[0]+': '+p[1]+' al '+p[2]+'" style="grid-row:'+row+';grid-column:'+(p[1]-20)+' / '+(p[2]-19)+'"><span>'+p[3]+'</span><span>'+(p[5]?p[4]:'sin pasaje')+'</span></div>';
-    row++;
-  });
-  tl.innerHTML=html;
-})();
-</script>
 
 </body>
 </html>
