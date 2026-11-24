@@ -213,14 +213,12 @@ footer{font-size:.8rem;color:var(--muted)}
   <p><a href="https://www.airbnb.com.ar/rooms/859286635873027398">Ver la casa en Airbnb →</a></p>
 </div>
 
-<section class="half">
-  <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span class="eyebrow">Calendario</span><h2>Fechas clave</h2></div>
-  <div class="dates">
-    <div class="date now"><b>Dom 22 · 14 h</b><p>Entrada a la casa.</p></div>
-    <div class="date"><b>Lun 23</b><p>Compra común del súper para la casa, sin lo del asado. Hay un fondo común de 236 USD, unos R$ 1.250.</p></div>
-    <div class="date"><b>Mié 25</b><p>Llega la carne de Urucarnes a la casa. A la tarde llega la chopera de Kairós con 30 L de IPA. Asado.</p></div>
-    <div class="date"><b>Dom 29 · 10 h</b><p>Salida de la casa.</p></div>
-  </div>
+<section>
+  <div class="sec-head has-ic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.4 5 2.8 5 5.8"/></svg></span><span class="eyebrow">El grupo</span><h2>Quién está cuándo</h2><p>Según lo que cada uno pasó por el grupo. Las aerolíneas ya movieron varios horarios: chequeá el tuyo y avisá si cambió.</p></div>
+  <p class="tl-note">En cada barra: a la izquierda, la hora de llegada a Floripa (con el día, para los que llegan antes de entrar a la casa); a la derecha, la hora del vuelo de vuelta.</p>
+  <div class="tl-wrap"><div class="tl" id="tl" role="img" aria-label="Días que está cada uno en la casa, del 22 al 29 de noviembre"></div></div>
+  <div class="legend"><span><i style="background:var(--sea)"></i>Confirmado</span></div>
+
 </section>
 
 
@@ -403,7 +401,30 @@ footer{font-size:.8rem;color:var(--muted)}
 
 <footer>Datos de lugares: Google Maps, consultados el 10/11/2026. Clima: AccuWeather al 24/11/2026. Excursiones: precios de Civitatis al 4/11/2026. Fútbol: Conmebol, Liga Profesional, CBF y medios deportivos al 23/11/2026. Vuelos y fechas: lo informado en el grupo. Última actualización: 24/11/2026.</footer>
 </div>
-
+<script>
+(function(){
+  // [nombre, llega, se va, hora ida, hora vuelta, confirmado]
+  var people=[
+    ["Mario",22,29,"vie 20 · 22:30","19:45",1],["Toto",22,29,"vie 20 · 22:30","17:15",1],["Ambro",22,29,"vie 20 · 22:30","17:15",1],["Fede",22,29,"vie 20 · 22:30","17:15",1],
+    ["Boti",22,29,"11:40","17:15",1],["Juan J.",22,29,"22:30","17:15",1],
+    ["Facu",22,27,"vie 20 · 23:40","",1],["Leza",22,27,"11:40","22:00",1],["Mati",22,27,"11:40","22:00",1],["Nico I.",22,27,"18:50","19:45",1],["Maro",22,27,"18:50","19:45",1],
+    ["Peto",22,26,"sáb 21 · 5:00","17:00",1],["Ciampa",22,25,"21 · 18:30","26 · 5:00",1],
+    ["Fer L.",24,27,"22:30","19:45",1],["Rama",25,29,"22:30","19:45",1],["Pablito",26,29,"19:15","19:45",1]
+  ];
+  var dows=["dom","lun","mar","mié","jue","vie","sáb","dom"];
+  var tl=document.getElementById("tl"); if(!tl) return;
+  var html='<div></div>';
+  for(var d=22;d<=29;d++){html+='<div class="h"><b>'+d+'</b>'+dows[d-22]+'</div>';}
+  var row=2;
+  people.forEach(function(p){
+    html+='<div class="n" style="grid-row:'+row+'">'+p[0]+'</div>';
+    html+='<div class="bg" style="grid-row:'+row+'"></div>';
+    html+='<div class="bar'+(p[5]?'':' tbd')+'" title="'+p[0]+': '+p[1]+' al '+p[2]+'" style="grid-row:'+row+';grid-column:'+(p[1]-20)+' / '+(p[2]-19)+'"><span>'+p[3]+'</span><span>'+(p[5]?p[4]:'sin pasaje')+'</span></div>';
+    row++;
+  });
+  tl.innerHTML=html;
+})();
+</script>
 
 </body>
 </html>
